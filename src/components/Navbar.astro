@@ -1,0 +1,289 @@
+---
+// Navbar.astro - Navegación moderna, accesible y móvil-first
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-3 pb-2 transition-all duration-300"
+  id="main-header"
+>
+  <div class="max-w-7xl mx-auto">
+    <nav
+      class="glass-nav rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-soft border border-white/80 transition-all duration-300"
+    >
+      <!-- Brand Logo & Identity -->
+      <a
+        href="#inicio"
+        class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-aneley-purple/50 rounded-full"
+        aria-label="Aneley Escuela Libre y Feliz - Ir al inicio"
+      >
+        <div
+          class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-aneley-yellow shadow-sm transition-transform duration-300 group-hover:scale-105"
+        >
+          <img
+            src="/logo-aneley.webp"
+            alt="Insignia oficial Aneley Escuela Libre y Feliz Limache"
+            class="w-full h-full object-cover"
+            loading="eager"
+            width="48"
+            height="48"
+          />
+        </div>
+        <div class="flex flex-col text-left">
+          <span
+            class="font-heading font-bold text-lg sm:text-xl text-aneley-purple leading-tight tracking-tight group-hover:text-aneley-purple-light transition-colors"
+          >
+            Aneley
+          </span>
+          <span
+            class="text-[11px] sm:text-sm font-medium text-aneley-text-muted hidden sm:block tracking-wide"
+          >
+            Escuela Libre y Feliz · Limache
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+        <a
+          href="#inicio"
+          class="nav-link px-3 py-1.5 rounded-full text-smm font-semibold text-aneley-text hover:text-aneley-purple hover:bg-aneley-purple-soft/60 transition-all"
+        >
+          Inicio
+        </a>
+        <a
+          href="#nosotros"
+          class="nav-link px-3 py-1.5 rounded-full text-smm font-semibold text-aneley-text hover:text-aneley-purple hover:bg-aneley-purple-soft/60 transition-all"
+        >
+          Quiénes Somos
+        </a>
+        <a
+          href="#metodologia"
+          class="nav-link px-3 py-1.5 rounded-full text-smm font-semibold text-aneley-text hover:text-aneley-purple hover:bg-aneley-purple-soft/60 transition-all"
+        >
+          Metodología
+        </a>
+        <a
+          href="#sendero"
+          class="nav-link px-3 py-1.5 rounded-full text-smm font-semibold text-aneley-text hover:text-aneley-purple hover:bg-aneley-purple-soft/60 transition-all"
+        >
+          El Sendero
+        </a>
+        <a
+          href="#galeria"
+          class="nav-link px-3 py-1.5 rounded-full text-smm font-semibold text-aneley-text hover:text-aneley-purple hover:bg-aneley-purple-soft/60 transition-all"
+        >
+          Vida en Aneley
+        </a>
+        <a
+          href="#faq"
+          class="nav-link px-3 py-1.5 rounded-full text-smm font-semibold text-aneley-text hover:text-aneley-purple hover:bg-aneley-purple-soft/60 transition-all"
+        >
+          Preguntas Frecuentes
+        </a>
+        <a
+          href="#contacto"
+          class="nav-link px-3 py-1.5 rounded-full text-smm font-semibold text-aneley-text hover:text-aneley-purple hover:bg-aneley-purple-soft/60 transition-all"
+        >
+          Contacto
+        </a>
+      </div>
+
+      <!-- Desktop Right Actions -->
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          href="https://wa.me/56956240280?text=Hola%20Aneley%20Escuela%20Libre%20y%20Feliz,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20visitas%20y%20postulaciones."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aneley-green-soft text-aneley-green font-bold text-sm hover:bg-aneley-green hover:text-white transition-all duration-300"
+          title="Escríbenos directamente a WhatsApp"
+        >
+          <svg
+            class="w-4 h-4 fill-current"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.45 1.743 1.956 2.083.195.044.348.04.478-.02.13-.058.419-.49.535-.664.116-.174.231-.145.39-.087s1.011.477 1.185.564c.173.087.289.13.332.203.043.072.043.419-.101.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.958-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+            ></path>
+          </svg>
+          <span>+56 9 5624 0280</span>
+        </a>
+
+        <a
+          href="#contacto"
+          class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white font-heading font-semibold text-smm shadow-pill hover:shadow-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+        >
+          <span>Postulaciones & Visitas</span>
+          <svg
+            class="w-4 h-4 transition-transform group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button
+        type="button"
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 rounded-full text-aneley-purple hover:bg-aneley-purple-soft focus:outline-none focus:ring-2 focus:ring-aneley-purple"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg
+          class="w-6 h-6 menu-open-icon"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+        <svg
+          class="w-6 h-6 menu-close-icon hidden"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Slide-Down Drawer -->
+    <div
+      id="mobile-menu"
+      class="lg:hidden hidden mt-2 rounded-3xl glass-nav p-5 shadow-card border border-white/80 transition-all duration-300"
+    >
+      <div class="flex flex-col gap-2">
+        <a
+          href="#inicio"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          🌸 Inicio
+        </a>
+        <a
+          href="#nosotros"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          🌿 Quiénes Somos
+        </a>
+        <a
+          href="#metodologia"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          🧠 Metodología Lefebre Lever
+        </a>
+        <a
+          href="#sendero"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          🌱 El Sendero del Aprendizaje
+        </a>
+        <a
+          href="#galeria"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          🎨 Vida en Aneley (Talleres y Huerto)
+        </a>
+        <a
+          href="#equipo"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          💛 Facilitadores y Guías
+        </a>
+        <a
+          href="#testimonios"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          💬 Testimonios de Familias
+        </a>
+        <a
+          href="#faq"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          ❓ Preguntas Frecuentes
+        </a>
+        <a
+          href="#contacto"
+          class="mobile-nav-link px-4 py-2.5 rounded-2xl text-base font-semibold text-aneley-text hover:bg-aneley-purple-soft hover:text-aneley-purple transition-all"
+        >
+          📍 Ubicación & Contacto
+        </a>
+
+        <div
+          class="pt-3 mt-2 border-t border-aneley-purple-soft/80 flex flex-col gap-2.5"
+        >
+          <a
+            href="#contacto"
+            class="mobile-nav-link w-full py-3 rounded-full bg-aneley-purple text-white text-center font-heading font-semibold shadow-pill hover:bg-aneley-purple-light transition-all"
+          >
+            Postulaciones & Visitas Guiadas
+          </a>
+          <a
+            href="https://wa.me/56956240280?text=Hola%20Aneley%20Escuela%20Libre%20y%20Feliz,%20me%20gustar%C3%ADa%20consultar%20por%20cupos%20y%20visitas."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full py-2.5 rounded-full bg-aneley-green text-white text-center font-bold text-smm shadow-whatsapp flex items-center justify-center gap-2 hover:bg-aneley-green-fresh transition-all"
+          >
+            <span>WhatsApp directo: +56 9 5624 0280</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu interactive behavior & scroll shrink
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const openIcon = menuBtn?.querySelector(".menu-open-icon");
+  const closeIcon = menuBtn?.querySelector(".menu-close-icon");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+  function toggleMenu() {
+    const isExpanded = menuBtn?.getAttribute("aria-expanded") === "true";
+    menuBtn?.setAttribute("aria-expanded", String(!isExpanded));
+    mobileMenu?.classList.toggle("hidden");
+    openIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+  }
+
+  menuBtn?.addEventListener("click", toggleMenu);
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (!mobileMenu?.classList.contains("hidden")) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Shrink/shadow effect on scroll
+  const header = document.getElementById("main-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header?.classList.add("py-1");
+      header?.classList.remove("pt-3", "pb-2");
+    } else {
+      header?.classList.add("pt-3", "pb-2");
+      header?.classList.remove("py-1");
+    }
+  });
+</script>

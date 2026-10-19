@@ -1,0 +1,41 @@
+---
+// FloatingWhatsApp.astro - Botón permanente flotante de WhatsApp
+---
+
+<div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 group">
+  <!-- Interactive Speech Bubble Tooltip -->
+  <a
+    href="https://wa.me/56956240280?text=Hola%20Aneley%20Escuela%20Libre%20y%20Feliz,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20visitas%20y%20postulaciones."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white shadow-card border border-aneley-green/20 text-sm font-heading font-bold text-aneley-purple hover:text-aneley-green transition-all duration-300 group-hover:scale-105"
+  >
+    <span class="w-2 h-2 rounded-full bg-aneley-green animate-pulse"></span>
+    <span>¿Hablamos por WhatsApp?</span>
+  </a>
+
+  <!-- Floating Action Button -->
+  <a
+    href="https://wa.me/56956240280?text=Hola%20Aneley%20Escuela%20Libre%20y%20Feliz,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20visitas%20y%20postulaciones."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir chat de WhatsApp con Aneley Escuela Libre y Feliz"
+    class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-aneley-green hover:bg-aneley-green-fresh text-white shadow-whatsapp hover:scale-110 active:scale-95 transition-all duration-300"
+  >
+    <!-- Ripple Ring Animation -->
+    <span
+      class="absolute inset-0 rounded-full bg-aneley-green opacity-40 animate-ping pointer-events-none"
+    ></span>
+
+    <!-- WhatsApp SVG Icon -->
+    <svg
+      class="w-7 h-7 sm:w-8 sm:h-8 fill-current relative z-10"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.45 1.743 1.956 2.083.195.044.348.04.478-.02.13-.058.419-.49.535-.664.116-.174.231-.145.39-.087s1.011.477 1.185.564c.173.087.289.13.332.203.043.072.043.419-.101.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.958-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+      ></path>
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,314 @@
+---
+// Hero.astro - Sección Hero cálida, luminosa y con estética campestre y moderna
+---
+
+<section
+  id="inicio"
+  class="relative pt-28 sm:pt-36 pb-16 lg:pb-28 overflow-hidden bg-gradient-to-b from-aneley-ivory/60 via-aneley-cream to-aneley-cream"
+>
+  <!-- Decorative Background Organic Elements -->
+  <div
+    class="absolute top-12 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none -z-10 overflow-hidden"
+  >
+    <!-- Gentle Sun Glow -->
+    <div
+      class="absolute top-0 right-10 sm:right-1/4 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-aneley-yellow-sun/15 blur-3xl"
+    >
+    </div>
+    <!-- Soft Purple Glow -->
+    <div
+      class="absolute top-32 -left-20 w-80 h-80 rounded-full bg-aneley-purple/10 blur-3xl"
+    >
+    </div>
+    <!-- Fresh Green Glow -->
+    <div
+      class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-aneley-green-light/15 blur-3xl"
+    >
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <!-- Left Content Column -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left">
+        <!-- Animated Badge / Location Tag -->
+        <div
+          class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 border border-aneley-yellow-warm shadow-sm mb-6 animate-float"
+        >
+          <span class="flex h-2.5 w-2.5 relative">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-aneley-yellow opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2.5 w-2.5 bg-aneley-yellow"
+            ></span>
+          </span>
+          <span
+            class="text-sm sm:text-smm font-bold text-aneley-text tracking-wide"
+          >
+            🌱 Admisión Abierta · Escuela Libre y Alternativa en Limache
+          </span>
+        </div>
+
+        <!-- Main Heading -->
+        <h1
+          class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-5xl xl:text-6xl text-aneley-purple leading-[1.15] tracking-tight mb-6"
+        >
+          Aprender con <span
+            class="text-aneley-yellow drop-shadow-sm underline decoration-aneley-yellow/40 decoration-wavy decoration-2"
+            >amor</span
+          >,
+          <span class="text-aneley-green">libertad</span> y conexión con la <span
+            class="text-aneley-purple-light">naturaleza</span
+          > en Limache
+        </h1>
+
+        <!-- Empathetic Subtitle -->
+        <p
+          class="font-body text-base sm:text-lg lg:text-xl text-aneley-text-muted leading-relaxed mb-8 max-w-2xl font-normal"
+        >
+          Un espacio educativo consciente centrado en el <strong
+            >bienestar emocional</strong
+          >, el <strong>juego libre</strong> y el ritmo único de cada niño y niña.
+          Acompañamos a las familias en co-crianza y preparamos con amor para <strong
+            >exámenes libres (MINEDUC)</strong
+          > mediante el reconocido Método Lefebre Lever.
+        </p>
+
+        <!-- CTA Buttons Group -->
+        <div
+          class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10"
+        >
+          <!-- Primary Button (Purple) -->
+          <a
+            href="#nosotros"
+            class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white font-heading font-bold text-base shadow-pill hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+          >
+            <span>Conoce nuestro espacio</span>
+            <svg
+              class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </a>
+
+          <!-- WhatsApp Button (Green) -->
+          <a
+            href="https://wa.me/56956240280?text=Hola%20Aneley%20Escuela%20Libre%20y%20Feliz,%20me%20gustar%C3%ADa%20coordinar%20una%20visita%20y%20conocer%20la%20propuesta%20educativa."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-aneley-green hover:bg-aneley-green-fresh text-white font-heading font-bold text-base shadow-whatsapp hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.45 1.743 1.956 2.083.195.044.348.04.478-.02.13-.058.419-.49.535-.664.116-.174.231-.145.39-.087s1.011.477 1.185.564c.173.087.289.13.332.203.043.072.043.419-.101.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.958-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+              ></path>
+            </svg>
+            <span>Escríbenos por WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Quick Value Highlights Bar -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full pt-6 border-t border-aneley-sand/60"
+        >
+          <div class="flex items-center gap-2.5 p-2 rounded-2xl bg-white/70">
+            <span class="text-2xl">🌱</span>
+            <span class="text-sm font-bold text-aneley-text"
+              >Huerto orgánico y naturaleza viva</span
+            >
+          </div>
+          <div class="flex items-center gap-2.5 p-2 rounded-2xl bg-white/70">
+            <span class="text-2xl">🦋</span>
+            <span class="text-sm font-bold text-aneley-text"
+              >Sin calificaciones ni etiquetas</span
+            >
+          </div>
+          <div class="flex items-center gap-2.5 p-2 rounded-2xl bg-white/70">
+            <span class="text-2xl">🤝</span>
+            <span class="text-sm font-bold text-aneley-text"
+              >Co-crianza cercana con familias</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Column (Composed Collage with Official Badge & Nature Imagery) -->
+      <div class="lg:col-span-5 relative">
+        <!-- Floating Butterfly Decorative SVG from Logo -->
+        <div
+          class="absolute -top-10 -right-4 sm:-right-8 w-16 h-16 sm:w-20 sm:h-20 z-20 animate-flutter pointer-events-none"
+          title="Mariposa de Aneley"
+        >
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-md">
+            <!-- Butterfly Left Wing -->
+            <path
+              d="M50 50 C30 20 5 30 15 60 C20 75 40 70 50 55 Z"
+              fill="#E84382"></path>
+            <path
+              d="M48 48 C35 30 18 36 24 55 C28 65 42 62 48 52 Z"
+              fill="#FFCA3A"></path>
+            <!-- Butterfly Right Wing -->
+            <path
+              d="M50 50 C70 20 95 30 85 60 C80 75 60 70 50 55 Z"
+              fill="#E84382"></path>
+            <path
+              d="M52 48 C65 30 82 36 76 55 C72 65 58 62 52 52 Z"
+              fill="#FFCA3A"></path>
+            <!-- Butterfly Body -->
+            <ellipse cx="50" cy="50" rx="3" ry="16" fill="#4E1D60"></ellipse>
+            <!-- Antennae -->
+            <path
+              d="M49 35 Q45 25 40 22 M51 35 Q55 25 60 22"
+              stroke="#4E1D60"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"></path>
+          </svg>
+        </div>
+
+        <!-- Main Hero Card Container -->
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <!-- Outer Organic Ring Decoration -->
+          <div
+            class="absolute -inset-3 sm:-inset-4 bg-gradient-to-tr from-aneley-purple via-aneley-yellow to-aneley-green rounded-[2.5rem] opacity-30 blur-lg transform -rotate-1"
+          >
+          </div>
+
+          <div
+            class="relative rounded-[2.2rem] overflow-hidden bg-white shadow-2xl border-4 border-white"
+          >
+            <!-- Main Hero Image (Happy outdoor nature school kids) -->
+            <div
+              class="relative h-80 sm:h-96 w-full overflow-hidden bg-aneley-ivory"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=1200&q=80"
+                alt="Niños felices riendo y aprendiendo al aire libre en un entorno campestre de Limache"
+                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                loading="eager"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-aneley-purple-deep/70 via-transparent to-black/10"
+              >
+              </div>
+
+              <!-- Bottom Overlay Caption -->
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span
+                  class="inline-block px-3 py-1 rounded-full bg-aneley-yellow text-aneley-text font-heading font-bold text-sm uppercase tracking-wider mb-1"
+                >
+                  Valle de Limache · Vida al Aire Libre
+                </span>
+                <p
+                  class="font-heading font-semibold text-smm sm:text-base text-white/95 leading-snug"
+                >
+                  "Donde el juego consciente es el motor de todo
+                  descubrimiento."
+                </p>
+              </div>
+            </div>
+
+            <!-- Bottom Floating Strip with School Badge -->
+            <div
+              class="p-4 sm:p-5 bg-gradient-to-r from-aneley-purple-surface to-white flex items-center justify-between gap-4 border-t border-aneley-sand/40"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-14 h-14 rounded-full overflow-hidden border-2 border-aneley-yellow shadow-md shrink-0"
+                >
+                  <img
+                    src="/logo-aneley.webp"
+                    alt="Logo Aneley"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h2
+                    class="font-heading font-bold text-smm text-aneley-purple"
+                  >
+                    Aneley Limache
+                  </h2>
+                  <p class="text-sm text-aneley-text-muted">
+                    Espacio Libre, Activo y Respetuoso
+                  </p>
+                </div>
+              </div>
+
+              <div class="text-right">
+                <span
+                  class="inline-flex items-center gap-1 text-sm font-bold text-aneley-green bg-aneley-green-soft px-2.5 py-1 rounded-full"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  Visitas Abiertas
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Floating Badge: Método Lefebre Lever -->
+          <div
+            class="absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-card border border-aneley-purple/15 flex items-center gap-3 animate-float max-w-[240px] sm:max-w-xs"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-aneley-yellow-soft flex items-center justify-center text-xl shrink-0"
+            >
+              🌻
+            </div>
+            <div>
+              <p
+                class="font-heading font-bold text-sm text-aneley-purple leading-tight"
+              >
+                Método Lefebre Lever
+              </p>
+              <p
+                class="text-[11px] text-aneley-text-muted leading-tight mt-0.5"
+              >
+                Neurociencias, empatía y respeto al ser
+              </p>
+            </div>
+          </div>
+
+          <!-- Tertiary Floating Badge: Co-crianza -->
+          <div
+            class="hidden sm:flex absolute -top-5 -left-5 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-2.5 shadow-card border border-aneley-green/20 items-center gap-2.5"
+          >
+            <span class="text-lg">🏡</span>
+            <span class="text-sm font-bold text-aneley-green"
+              >Escuela + Familia en Sintonía</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organic Wave Transition to Next Section -->
+  <div class="w-full overflow-hidden leading-none mt-14 sm:mt-20">
+    <svg
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+      class="relative block w-full h-10 sm:h-16 text-white fill-current"
+    >
+      <path
+        d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,50 L1200,120 L0,120 Z"
+      ></path>
+    </svg>
+  </div>
+</section>

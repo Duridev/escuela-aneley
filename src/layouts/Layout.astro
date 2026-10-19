@@ -1,0 +1,92 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Aneley · Escuela Libre y Feliz | Limache, Chile",
+  description = "Espacio educativo alternativo en Limache, Chile. Educación vivencial, respetuosa y en contacto con la naturaleza bajo el Método Lefebre Lever y preparación para exámenes libres.",
+  image = "/logo-aneley.webp",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://escuela-aneley.cl");
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/webp" href="/logo-aneley.webp" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primary Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="escuela libre limache, escuela alternativa limache, metodo lefebre lever, educacion respetuosa limache, examenes libres mineduc chile, colegio alternativo olmue valparaiso, educacion en la naturaleza chile" />
+    <meta name="author" content="Aneley - Escuela Libre y Feliz" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="Aneley Escuela Libre y Feliz" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Structured Data (JSON-LD) for LocalBusiness & EducationalOrganization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["EducationalOrganization", "LocalBusiness"],
+      "name": "Aneley Escuela Libre y Feliz",
+      "image": "https://escuela-aneley.cl/logo-aneley.webp",
+      "telephone": "+56956240280",
+      "email": "Aneleylibreyfeliz@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Condell 877",
+        "addressLocality": "Limache",
+        "addressRegion": "Valparaíso",
+        "postalCode": "2240000",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -32.9886301,
+        "longitude": -71.2645447
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/Aneley-Escuela-Libre-y-Feliz-Limache-1886476048269272",
+        "https://www.instagram.com/aneley_escuela_libreyfeliz/"
+      ],
+      "description": description
+    })} />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="bg-aneley-cream text-aneley-text min-h-screen flex flex-col antialiased selection:bg-aneley-purple selection:text-white">
+    <slot />
+  </body>
+</html>

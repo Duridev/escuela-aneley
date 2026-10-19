@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import AboutUs from '../components/AboutUs.astro';
+import Pillars from '../components/Pillars.astro';
+import LearningPath from '../components/LearningPath.astro';
+import BentoGallery from '../components/BentoGallery.astro';
+import Team from '../components/Team.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactLocation from '../components/ContactLocation.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import '../styles/global.css';
+---
+
+<Layout 
+  title="Aneley · Escuela Libre y Feliz | Limache, Región de Valparaíso"
+  description="Espacio educativo alternativo en Limache, Chile. Educación vivencial, amigable y consciente en conexión con la naturaleza bajo el Método Lefebre Lever y preparación para exámenes libres (MINEDUC)."
+>
+  <!-- Top Navigation Bar -->
+  <Navbar />
+
+  <main class="overflow-x-hidden">
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- 4 Pedagogical Pillars -->
+    <Pillars />
+
+    <!-- About Us & Método Lefebre Lever -->
+    <AboutUs />
+
+    <!-- El Sendero del Aprendizaje -->
+    <LearningPath />
+
+    <!-- Vida en Aneley (Bento Grid) -->
+    <BentoGallery />
+
+    <!-- Facilitators & Guides Team -->
+    <Team />
+
+    <!-- Testimonials from Families -->
+    <Testimonials />
+
+    <!-- Frequently Asked Questions -->
+    <FaqSection />
+
+    <!-- Practical Info, Map & Admission Form -->
+    <ContactLocation />
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+  <!-- Floating WhatsApp Action Button -->
+  <FloatingWhatsApp />
+</Layout>

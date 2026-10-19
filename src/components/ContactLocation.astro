@@ -1,0 +1,433 @@
+---
+// ContactLocation.astro - Información Práctica, Ubicación en Limache y Formulario de Admisión
+---
+
+<section
+  id="contacto"
+  class="py-20 sm:py-28 bg-gradient-to-b from-white via-aneley-ivory to-aneley-cream relative"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-aneley-green-soft text-aneley-green font-heading font-bold text-sm uppercase tracking-wider mb-4 border border-aneley-green/20"
+      >
+        📍 Visítanos en Limache
+      </span>
+      <h2
+        class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-aneley-purple leading-tight tracking-tight mb-4"
+      >
+        Postulaciones & Contacto Directo
+      </h2>
+      <p
+        class="font-body text-base sm:text-lg text-aneley-text-muted leading-relaxed"
+      >
+        Ven a conocer nuestro espacio, los árboles, las salas y a conversar con
+        nuestro equipo. Las puertas de Aneley están abiertas para tu familia.
+      </p>
+    </div>
+
+    <!-- 2 Columns: Left = Practical Info & Map / Right = Admission Form -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Left Column: Practical Details & Map Card (lg:col-span-5) -->
+      <div class="lg:col-span-5 space-y-6">
+        <!-- Info Box -->
+        <div
+          class="bg-white rounded-3xl p-7 shadow-card border border-aneley-sand/60"
+        >
+          <h3
+            class="font-heading font-bold text-xl text-aneley-purple mb-5 flex items-center gap-2.5"
+          >
+            <span>🏡</span> Datos Prácticos de la Escuela
+          </h3>
+
+          <div class="space-y-4 text-smm">
+            <!-- Direccion -->
+            <div class="flex items-start gap-3.5">
+              <div
+                class="w-10 h-10 rounded-2xl bg-aneley-purple-soft text-aneley-purple flex items-center justify-center text-lg shrink-0 mt-0.5"
+              >
+                📍
+              </div>
+              <div>
+                <strong class="block font-heading text-aneley-purple text-base"
+                  >Dirección</strong
+                >
+                <p class="text-aneley-text-muted">
+                  Condell 877, Limache, Región de Valparaíso, Chile (Código
+                  Postal 2240000)
+                </p>
+                <p class="text-sm text-aneley-yellow font-semibold mt-0.5">
+                  A pasos de locomoción colectiva y vías principales
+                </p>
+              </div>
+            </div>
+
+            <!-- Horarios -->
+            <div class="flex items-start gap-3.5">
+              <div
+                class="w-10 h-10 rounded-2xl bg-aneley-yellow-soft text-aneley-yellow flex items-center justify-center text-lg shrink-0 mt-0.5"
+              >
+                ⏰
+              </div>
+              <div>
+                <strong class="block font-heading text-aneley-purple text-base"
+                  >Horario de Atención y Jornada</strong
+                >
+                <p class="text-aneley-text-muted">
+                  Lunes a Viernes de 08:00 a 18:00 hrs
+                </p>
+                <p class="text-sm text-aneley-text-muted">
+                  Jornada pedagógica matutina y talleres de tarde
+                </p>
+              </div>
+            </div>
+
+            <!-- WhatsApp & Telefono -->
+            <div class="flex items-start gap-3.5">
+              <div
+                class="w-10 h-10 rounded-2xl bg-aneley-green-soft text-aneley-green flex items-center justify-center text-lg shrink-0 mt-0.5"
+              >
+                💬
+              </div>
+              <div>
+                <strong class="block font-heading text-aneley-purple text-base"
+                  >Teléfonos / WhatsApp</strong
+                >
+                <a
+                  href="tel:+56956240280"
+                  class="block text-aneley-green font-bold hover:underline"
+                  >+56 9 5624 0280</a
+                >
+                <a
+                  href="tel:+56979050649"
+                  class="block text-aneley-text-muted hover:underline text-sm"
+                  >+56 9 7905 0649</a
+                >
+              </div>
+            </div>
+
+            <!-- Correo Electronico -->
+            <div class="flex items-start gap-3.5">
+              <div
+                class="w-10 h-10 rounded-2xl bg-aneley-pink-soft text-aneley-pink flex items-center justify-center text-lg shrink-0 mt-0.5"
+              >
+                ✉️
+              </div>
+              <div>
+                <strong class="block font-heading text-aneley-purple text-base"
+                  >Correo Oficial</strong
+                >
+                <a
+                  href="mailto:Aneleylibreyfeliz@gmail.com"
+                  class="text-aneley-purple hover:underline font-semibold break-all"
+                >
+                  Aneleylibreyfeliz@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Map Embed Card -->
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-card border border-aneley-sand/60"
+        >
+          <div
+            class="p-4 bg-aneley-purple-surface border-b border-aneley-sand/40 flex items-center justify-between"
+          >
+            <span
+              class="font-heading font-bold text-sm uppercase tracking-wider text-aneley-purple flex items-center gap-2"
+            >
+              <span class="w-2 h-2 rounded-full bg-aneley-green"></span> Mapa Satelital
+              · Limache
+            </span>
+            <a
+              href="https://maps.google.com/?q=-32.9886301,-71.2645447"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-bold text-aneley-purple hover:underline"
+            >
+              Abrir en Google Maps ↗
+            </a>
+          </div>
+          <div class="h-64 w-full bg-aneley-ivory relative">
+            <iframe
+              title="Ubicación de Aneley Escuela Libre y Feliz en Limache"
+              class="w-full h-full border-0"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=-32.9886301,-71.2645447&hl=es&z=15&output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Admission Form (lg:col-span-7) -->
+      <div class="lg:col-span-7">
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-card border border-aneley-sand/80 relative"
+        >
+          <div class="mb-8">
+            <span
+              class="px-3 py-1 rounded-full bg-aneley-yellow-soft text-aneley-yellow font-heading font-bold text-sm uppercase tracking-wider inline-block mb-2"
+            >
+              Admisiones Ciclo Escolar
+            </span>
+            <h3
+              class="font-heading font-extrabold text-2xl sm:text-3xl text-aneley-purple"
+            >
+              Solicitud de Visita & Postulación
+            </h3>
+            <p class="text-sm sm:text-smm text-aneley-text-muted mt-1">
+              Completa este breve formulario y nuestro equipo de facilitadores
+              se contactará contigo para coordinar una visita personalizada.
+            </p>
+          </div>
+
+          <!-- The Form -->
+          <form id="admission-form" class="space-y-5">
+            <!-- Parent Name -->
+            <div>
+              <label
+                for="parent-name"
+                class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+              >
+                Nombre y Apellido de la Madre, Padre o Tutor *
+              </label>
+              <input
+                type="text"
+                id="parent-name"
+                name="parentName"
+                required
+                placeholder="Ej. Carolina Tapia González"
+                class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium"
+              />
+            </div>
+
+            <!-- Contact 2 Columns: Phone & Email -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="contact-phone"
+                  class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+                >
+                  WhatsApp o Teléfono *
+                </label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="contactPhone"
+                  required
+                  placeholder="+56 9 1234 5678"
+                  class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="contact-email"
+                  class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+                >
+                  Correo Electrónico *
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="contactEmail"
+                  required
+                  placeholder="ejemplo@correo.cl"
+                  class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium"
+                />
+              </div>
+            </div>
+
+            <!-- Student 2 Columns: Student Name & Age/Cycle -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="student-name"
+                  class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+                >
+                  Nombre del Niño o Niña
+                </label>
+                <input
+                  type="text"
+                  id="student-name"
+                  name="studentName"
+                  placeholder="Ej. Mateo"
+                  class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="student-cycle"
+                  class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+                >
+                  Edad o Ciclo de Interés *
+                </label>
+                <select
+                  id="student-cycle"
+                  name="studentCycle"
+                  required
+                  class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium text-aneley-text"
+                >
+                  <option value="" disabled selected
+                    >Selecciona una etapa...</option
+                  >
+                  <option value="Semilla (3 a 5 años)"
+                    >🌱 Semilla / Primeros Pasos (3 a 5 años)</option
+                  >
+                  <option value="Brote Inicial (1° a 4° Básico)"
+                    >🌿 Brote / Exploradores (1° a 4° Básico)</option
+                  >
+                  <option value="Árbol Superior (5° a 8° Básico)"
+                    >🌳 Árbol en Flor / Creadores (5° a 8° Básico)</option
+                  >
+                  <option value="Talleres de Tarde"
+                    >🎨 Solo Talleres Extracurriculares de Tarde</option
+                  >
+                  <option value="Otra Consulta"
+                    >💬 Otra consulta pedagógica</option
+                  >
+                </select>
+              </div>
+            </div>
+
+            <!-- Message / Inquiry -->
+            <div>
+              <label
+                for="inquiry-message"
+                class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+              >
+                Cuéntanos sobre tu hijo/a o tus consultas *
+              </label>
+              <textarea
+                id="inquiry-message"
+                name="inquiryMessage"
+                rows="3"
+                required
+                placeholder="¿Qué buscas en una escuela alternativa? ¿Vienen de escuela tradicional? ¿Deseas coordinar un día específico para visitarnos?"
+                class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button & Instant WhatsApp Option -->
+            <div
+              class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
+            >
+              <button
+                type="submit"
+                id="submit-form-btn"
+                class="flex-1 py-4 px-6 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white font-heading font-bold text-smm sm:text-base shadow-pill hover:shadow-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <span>Enviar Solicitud de Visita</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                  ></path>
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                id="direct-whatsapp-form-btn"
+                class="py-3.5 px-5 rounded-full bg-aneley-green-soft hover:bg-aneley-green text-aneley-green hover:text-white font-heading font-bold text-sm sm:text-smm transition-all duration-300 flex items-center justify-center gap-2"
+                title="Completar y enviar directo a WhatsApp"
+              >
+                <span>Enviar por WhatsApp</span>
+                <span class="text-base">💬</span>
+              </button>
+            </div>
+
+            <!-- Success notification box -->
+            <div
+              id="form-success-alert"
+              class="hidden mt-4 p-4 rounded-2xl bg-aneley-green-soft border border-aneley-green/30 text-aneley-green font-medium text-smm flex items-center gap-3 animate-float"
+            >
+              <span class="text-xl">🎉</span>
+              <div>
+                <strong>¡Solicitud recibida con amor!</strong>
+                <p class="text-sm text-aneley-text-muted mt-0.5">
+                  Te escribiremos a la brevedad para coordinar la visita a la
+                  escuela en Limache.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Form submission handling & direct WhatsApp dispatch
+  const form = document.getElementById("admission-form") as HTMLFormElement;
+  const successAlert = document.getElementById("form-success-alert");
+  const directWaBtn = document.getElementById("direct-whatsapp-form-btn");
+
+  function getFormData() {
+    const parentName =
+      (document.getElementById("parent-name") as HTMLInputElement)?.value || "";
+    const contactPhone =
+      (document.getElementById("contact-phone") as HTMLInputElement)?.value ||
+      "";
+    const contactEmail =
+      (document.getElementById("contact-email") as HTMLInputElement)?.value ||
+      "";
+    const studentName =
+      (document.getElementById("student-name") as HTMLInputElement)?.value ||
+      "";
+    const studentCycle =
+      (document.getElementById("student-cycle") as HTMLSelectElement)?.value ||
+      "";
+    const inquiryMessage =
+      (document.getElementById("inquiry-message") as HTMLTextAreaElement)
+        ?.value || "";
+
+    return {
+      parentName,
+      contactPhone,
+      contactEmail,
+      studentName,
+      studentCycle,
+      inquiryMessage,
+    };
+  }
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = getFormData();
+
+    // Show success message
+    if (successAlert) {
+      successAlert.classList.remove("hidden");
+    }
+
+    // Optionally open WhatsApp with formatted message
+    const text = `Hola Aneley Escuela Libre y Feliz! Mi nombre es ${data.parentName}. Me comunico para postular o visitar la escuela con mi hijo/a ${data.studentName || ""} para el ciclo ${data.studentCycle}. Mi teléfono es ${data.contactPhone} y correo ${data.contactEmail}. Consulta: ${data.inquiryMessage}`;
+    const waUrl = `https://wa.me/56956240280?text=${encodeURIComponent(text)}`;
+
+    setTimeout(() => {
+      window.open(waUrl, "_blank");
+    }, 800);
+  });
+
+  directWaBtn?.addEventListener("click", () => {
+    const data = getFormData();
+    const text = `Hola Aneley Escuela Libre y Feliz! Mi nombre es ${data.parentName || "Familia interesada"}. Me gustaría consultar por admisiones y visitas guiadas. Mi hijo/a: ${data.studentName || "Estudiante"} (Ciclo: ${data.studentCycle || "Por definir"}). Consulta: ${data.inquiryMessage || "Quisiera conocer el espacio."}`;
+    const waUrl = `https://wa.me/56956240280?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, "_blank");
+  });
+</script>

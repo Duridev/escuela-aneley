@@ -1,0 +1,272 @@
+---
+// BentoGallery.astro - Vida en Aneley: Bento Grid con talleres, huerto, arte y comunidad
+---
+
+<section id="galeria" class="py-20 sm:py-28 bg-aneley-cream relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-aneley-green-soft text-aneley-green font-heading font-bold text-sm uppercase tracking-wider mb-4 border border-aneley-green/20"
+      >
+        🎨 Cotidianeidad y Alegría
+      </span>
+      <h2
+        class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-aneley-purple leading-tight tracking-tight mb-4"
+      >
+        Vida en Aneley
+      </h2>
+      <p
+        class="font-body text-base sm:text-lg text-aneley-text-muted leading-relaxed"
+      >
+        Un recorrido visual por los talleres, el huerto y los momentos mágicos
+        donde nuestros niños y niñas construyen recuerdos para toda la vida.
+      </p>
+    </div>
+
+    <!-- Bento Grid Container -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[260px] sm:auto-rows-[280px]"
+    >
+      <!-- Bento Item 1: Huerto & Naturaleza (Large: span 2 cols, span 2 rows) -->
+      <div
+        class="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group shadow-card border-2 border-white/80"
+      >
+        <img
+          src="https://plus.unsplash.com/premium_photo-1664303650962-19ce73494d7c?auto=format&fit=crop&w=1200&q=80"
+          alt="Niños trabajando la tierra y cuidando el huerto escolar en Limache"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-aneley-purple-deep/85 via-black/30 to-transparent"
+        >
+        </div>
+
+        <!-- Top Badge -->
+        <div class="absolute top-5 left-5">
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-aneley-green text-white text-sm font-heading font-bold shadow-sm"
+          >
+            <span>🌱</span> Huerto & Permacultura
+          </span>
+        </div>
+
+        <!-- Bottom Content -->
+        <div class="absolute bottom-6 left-6 right-6 text-white">
+          <h3
+            class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2 leading-tight"
+          >
+            La Tierra como Maestra Viva
+          </h3>
+          <p
+            class="text-sm sm:text-smm text-white/90 leading-relaxed font-normal max-w-lg mb-3"
+          >
+            Aprender de ciclos biológicos, compostaje, biodiversidad y el
+            respeto por cada ser vivo. Los niños cosechan lo que ellos mismos
+            sembraron con amor.
+          </p>
+          <div
+            class="flex items-center gap-3 text-sm text-aneley-yellow font-semibold"
+          >
+            <span>🌾 Cultivos de temporada</span>
+            <span>•</span>
+            <span>💧 Cuidado consciente del agua</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento Item 2: Taller de Pintura y Cerámica (span 1 col, span 2 rows on desktop) -->
+      <div
+        class="md:col-span-1 lg:col-span-1 md:row-span-2 relative rounded-3xl overflow-hidden group shadow-card border-2 border-white/80"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80"
+          alt="Manos con pintura y creación libre en taller de arte"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-aneley-pink/90 via-black/20 to-transparent"
+        >
+        </div>
+
+        <div class="absolute top-5 left-5">
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-aneley-pink text-white text-sm font-heading font-bold shadow-sm"
+          >
+            <span>🎨</span> Arte Sin Pautas Rígidas
+          </span>
+        </div>
+
+        <div class="absolute bottom-6 left-6 right-6 text-white">
+          <h3 class="font-heading font-extrabold text-xl text-white mb-2">
+            Expresión Libre
+          </h3>
+          <p class="text-sm text-white/90 leading-relaxed">
+            Acuarela, barro, tintes naturales extraídos de flores y hojas de
+            Limache. El arte como canal de descarga y autoconocimiento.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bento Item 3: Música, Ritmos & Sonido (span 1 col, span 1 row) -->
+      <div
+        class="md:col-span-1 lg:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden group shadow-card border-2 border-white/80"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+          alt="Instrumentos musicales y cantos en ronda"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-aneley-yellow/90 via-black/30 to-transparent"
+        >
+        </div>
+
+        <div class="absolute top-4 left-4">
+          <span
+            class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-aneley-yellow text-aneley-text text-sm font-heading font-bold"
+          >
+            <span>🎶</span> Música & Ritmo
+          </span>
+        </div>
+
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <h3 class="font-heading font-bold text-lg text-white">
+            Sonoterapia & Danza
+          </h3>
+          <p class="text-sm text-white/95">
+            Tambores, cuencos y cantos en asamblea.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bento Item 4: Literatura & Asambleas en Ronda (span 1 col, span 1 row) -->
+      <div
+        class="md:col-span-1 lg:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden group shadow-card border-2 border-white/80"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80"
+          alt="Libros infantiles y rincón de cuentacuentos"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-aneley-purple/90 via-black/30 to-transparent"
+        >
+        </div>
+
+        <div class="absolute top-4 left-4">
+          <span
+            class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-aneley-purple text-white text-sm font-heading font-bold"
+          >
+            <span>📖</span> Rincón Literario
+          </span>
+        </div>
+
+        <div class="absolute bottom-4 left-4 right-4 text-white">
+          <h3 class="font-heading font-bold text-lg text-white">
+            Cuentacuentos
+          </h3>
+          <p class="text-sm text-white/95">
+            Historias bajo los árboles y amor por los libros.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bento Item 5: Cocina Consciente & Vida Comunitaria (span 2 cols or 4 cols) -->
+      <div
+        class="md:col-span-2 lg:col-span-2 md:row-span-1 relative rounded-3xl overflow-hidden group shadow-card border-2 border-white/80"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80"
+          alt="Comunidad de familias y niños compartiendo comida y crianza"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-aneley-purple-deep/85 via-black/30 to-transparent"
+        >
+        </div>
+
+        <div class="absolute top-4 left-4">
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-aneley-purple text-sm font-heading font-bold shadow-sm"
+          >
+            <span>🍲</span> Cocina & Co-Crianza
+          </span>
+        </div>
+
+        <div class="absolute bottom-4 left-5 right-5 text-white">
+          <h3 class="font-heading font-bold text-lg sm:text-xl text-white mb-1">
+            Alimentación Saludable & Encuentros Familiares
+          </h3>
+          <p class="text-sm text-white/90">
+            Amasado de pan integral, ensaladas de la huerta y mingas
+            comunitarias de fin de semana.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bento Item 6: Ciencia & Exploración Científica (span 2 cols) -->
+      <div
+        class="md:col-span-1 lg:col-span-2 md:row-span-1 relative rounded-3xl overflow-hidden group shadow-card border-2 border-white/80"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80"
+          alt="Niños explorando la naturaleza con lupas y microscopios de campo"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-aneley-sky/90 via-black/30 to-transparent"
+        >
+        </div>
+
+        <div class="absolute top-4 left-4">
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aneley-sky text-white text-sm font-heading font-bold shadow-sm"
+          >
+            <span>🔬</span> Ciencia en Vivo
+          </span>
+        </div>
+
+        <div class="absolute bottom-4 left-5 right-5 text-white">
+          <h3 class="font-heading font-bold text-lg sm:text-xl text-white mb-1">
+            Pequeños Científicos del Valle
+          </h3>
+          <p class="text-sm text-white/90">
+            Lupas, colecciones de insectos, experimentos de física elemental y
+            meteorología local.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instagram Banner Callout -->
+    <div class="mt-12 text-center">
+      <a
+        href="https://www.instagram.com/aneley_escuela_libreyfeliz/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-aneley-purple hover:bg-aneley-purple-soft font-heading font-bold text-smm shadow-soft border border-aneley-purple/20 hover:-translate-y-0.5 transition-all duration-300"
+      >
+        <svg
+          class="w-5 h-5 text-aneley-pink"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+          ></path>
+        </svg>
+        <span
+          >Síguenos en Instagram @aneley_escuela_libreyfeliz para ver nuestras
+          actividades diarias</span
+        >
+      </a>
+    </div>
+  </div>
+</section>
