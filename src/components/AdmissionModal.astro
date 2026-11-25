@@ -1,0 +1,290 @@
+---
+// AdmissionModal.astro - Modal rediseñado de Matrículas Año 2027 con logo de Aneley, grilla 3+2 y scrollbar redondeada
+const admissionSteps = [
+  {
+    number: "01",
+    title: "Primer contacto",
+    description:
+      "Envíanos un mensaje por WhatsApp usando nuestro formulario de contacto para recibir toda la información práctica para el año escolar 2027.",
+    badgeClass: "bg-aneley-purple text-white",
+    borderClass: "border-b-aneley-purple",
+    spanClass: "md:col-span-2",
+  },
+  {
+    number: "02",
+    title: "Reunión informativa",
+    description:
+      "Agendamos una reunión con nuestro equipo para resolver tus dudas, contarte cómo funciona el Método Lefebre Lever y coordinar la pasantía.",
+    badgeClass: "bg-aneley-green text-white",
+    borderClass: "border-b-aneley-green",
+    spanClass: "md:col-span-2",
+  },
+  {
+    number: "03",
+    title: "Pasantía vivencial",
+    description:
+      "Instancia de media jornada gratuita donde el o la estudiante asiste a la escuela para experimentar nuestro cotidiano y compartir con sus pares.",
+    badgeClass: "bg-aneley-yellow text-aneley-text",
+    borderClass: "border-b-aneley-yellow",
+    spanClass: "md:col-span-2",
+  },
+  {
+    number: "04",
+    title: "Reunión de entrega y apreciaciones",
+    description:
+      "Escuela y familia se reúnen para compartir la experiencia vivida durante la pasantía y conversar sus apreciaciones mutuas.",
+    badgeClass: "bg-aneley-pink text-white",
+    borderClass: "border-b-aneley-pink",
+    spanClass: "md:col-span-3",
+  },
+  {
+    number: "05",
+    title: "Acuerdo de Co-crianza y matrícula",
+    description:
+      "Firma del acuerdo de co-crianza junto a la familia y realización de los pasos administrativos para formalizar el ingreso.",
+    badgeClass: "bg-aneley-purple text-white",
+    borderClass: "border-b-aneley-purple",
+    spanClass: "md:col-span-3",
+  },
+];
+---
+
+<!-- Admission Modal Backdrop & Dialog -->
+<div
+  id="admission-modal"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/65 backdrop-blur-sm p-3 sm:p-6 transition-opacity duration-300 opacity-0"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="admission-modal-title"
+>
+  <!-- Outer Rounded Shell (Clips corners cleanly so scrollbar never squares off the right edge) -->
+  <div
+    id="admission-modal-panel"
+    class="relative w-full max-w-3xl max-h-[90vh] flex flex-col rounded-3xl overflow-hidden bg-[#FDFBF7] shadow-2xl border border-white/60 transform scale-95 transition-all duration-300"
+  >
+    <!-- Top Gradient Header Banner -->
+    <div
+      class="relative shrink-0 bg-gradient-to-r from-aneley-purple-deep via-aneley-purple to-[#8B357A] px-5 py-5 sm:px-8 sm:py-6 text-white overflow-hidden"
+    >
+      <!-- Close Button -->
+      <button
+        type="button"
+        id="close-admission-modal"
+        aria-label="Cerrar ventana de matrículas"
+        class="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white flex items-center justify-center transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Logo + Heading -->
+      <div class="relative z-10 flex items-center gap-4 sm:gap-5 pr-10">
+        <div
+          class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-[3px] border-white shadow-lg bg-white shrink-0"
+        >
+          <img
+            src="/logo-aneley.webp"
+            alt="Logo Aneley Escuela Libre y Feliz"
+            class="w-full h-full object-cover"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div>
+          <h2
+            id="admission-modal-title"
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight tracking-tight drop-shadow-sm"
+          >
+            Matrículas Año 2027
+          </h2>
+          <p class="text-xs sm:text-smm text-white/90 mt-1 leading-snug">
+            Conoce nuestro proceso de admisión paso a paso en Aneley Escuela
+            Libre y Feliz.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable Body with Custom Rounded Scrollbar -->
+    <div class="modal-scroll-area flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-7">
+      <p class="font-heading font-extrabold text-smm sm:text-base text-aneley-text mb-5">
+        Nuestro proceso de admisión cuenta con los siguientes pasos:
+      </p>
+
+      <!-- 3 + 2 Bento Steps Grid -->
+      <ol class="grid grid-cols-1 md:grid-cols-6 gap-4">
+        {
+          admissionSteps.map((step) => (
+            <li
+              class={`${step.spanClass} bg-white rounded-2xl p-4 sm:p-5 border border-aneley-sand/50 border-b-4 ${step.borderClass} shadow-sm hover:shadow-card transition-shadow duration-300 flex flex-col`}
+            >
+              <div class="flex items-center gap-3 mb-2.5">
+                <span
+                  class={`w-9 h-9 rounded-xl ${step.badgeClass} font-heading font-extrabold text-sm flex items-center justify-center shrink-0 shadow-sm`}
+                >
+                  {step.number}
+                </span>
+                <h3 class="font-heading font-extrabold text-smm sm:text-base text-aneley-text leading-tight">
+                  {step.title}
+                </h3>
+              </div>
+              <p class="text-xs sm:text-sm text-aneley-text-muted leading-relaxed">
+                {step.description}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <!-- Footer Action Bar -->
+      <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <button
+          type="button"
+          id="admission-cta-btn"
+          class="flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-aneley-purple-deep via-aneley-purple to-[#8B357A] hover:brightness-110 text-white font-heading font-bold text-smm sm:text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+        >
+          <span>Solicitar Reunión</span>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            ></path>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          id="dismiss-admission-modal"
+          class="px-6 py-3.5 rounded-full bg-aneley-ivory hover:bg-aneley-sand/50 text-aneley-text font-heading font-bold text-sm transition-colors border border-aneley-sand/50"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-scroll-area {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(107, 45, 130, 0.35) transparent;
+  }
+
+  .modal-scroll-area::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .modal-scroll-area::-webkit-scrollbar-track {
+    background: rgba(107, 45, 130, 0.06);
+    border-radius: 9999px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .modal-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(107, 45, 130, 0.32);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  .modal-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: rgba(107, 45, 130, 0.55);
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+</style>
+
+<script>
+  const modal = document.getElementById("admission-modal");
+  const panel = document.getElementById("admission-modal-panel");
+  const closeBtn = document.getElementById("close-admission-modal");
+  const dismissBtn = document.getElementById("dismiss-admission-modal");
+  const ctaBtn = document.getElementById("admission-cta-btn");
+  const openTriggers = document.querySelectorAll("[data-open-admission-modal]");
+
+  const STORAGE_KEY = "aneley_matriculas_2027_seen";
+
+  function openAdmissionModal() {
+    if (!modal || !panel) return;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => {
+      modal.classList.remove("opacity-0");
+      modal.classList.add("opacity-100");
+      panel.classList.remove("scale-95");
+      panel.classList.add("scale-100");
+    });
+    try {
+      sessionStorage.setItem(STORAGE_KEY, "1");
+    } catch {
+      // ignore storage errors in restricted contexts
+    }
+  }
+
+  function closeAdmissionModal() {
+    if (!modal || !panel) return;
+    modal.classList.remove("opacity-100");
+    modal.classList.add("opacity-0");
+    panel.classList.remove("scale-100");
+    panel.classList.add("scale-95");
+    document.body.style.overflow = "";
+    window.setTimeout(() => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }, 280);
+  }
+
+  openTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", openAdmissionModal);
+  });
+
+  closeBtn?.addEventListener("click", closeAdmissionModal);
+  dismissBtn?.addEventListener("click", closeAdmissionModal);
+
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) closeAdmissionModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+      closeAdmissionModal();
+    }
+  });
+
+  // "Solicitar Reunión" closes modal and smoothly scrolls to the contact form
+  ctaBtn?.addEventListener("click", () => {
+    closeAdmissionModal();
+    window.setTimeout(() => {
+      const contactSection = document.getElementById("contacto");
+      contactSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      const nameInput = document.getElementById("parent-name") as HTMLInputElement | null;
+      if (nameInput) {
+        window.setTimeout(() => nameInput.focus({ preventScroll: true }), 550);
+      }
+    }, 260);
+  });
+
+  // Auto-open once on first visit of the session
+  let alreadySeen = false;
+  try {
+    alreadySeen = sessionStorage.getItem(STORAGE_KEY) === "1";
+  } catch {
+    alreadySeen = false;
+  }
+
+  if (!alreadySeen) {
+    window.setTimeout(() => {
+      openAdmissionModal();
+    }, 650);
+  }
+</script>
