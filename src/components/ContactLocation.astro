@@ -72,7 +72,7 @@
               </div>
               <div>
                 <strong class="block font-heading text-aneley-purple text-base"
-                  >Horario de Atención y Jornada</strong
+                  >Horario de Atención</strong
                 >
                 <p class="text-aneley-text-muted">
                   Lunes a Viernes de 08:00 a 18:00 hrs
@@ -175,32 +175,51 @@
       <!-- Right Column: Interactive Admission Form (lg:col-span-7) -->
       <div class="lg:col-span-7 order-1 lg:order-2">
         <div
-          class="bg-white rounded-3xl p-8 sm:p-10 shadow-card border border-aneley-sand/80 relative"
+          class="relative rounded-3xl p-7 sm:p-10 bg-gradient-to-br from-aneley-purple via-aneley-purple-deep to-aneley-purple text-white shadow-2xl ring-4 ring-aneley-purple/15 overflow-hidden"
         >
-          <div class="mb-8">
+          <!-- Top Brand Accent Strip -->
+          <div
+            class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-aneley-yellow via-aneley-pink to-aneley-green"
+            aria-hidden="true"
+          >
+          </div>
+
+          <!-- Subtle Ambient Glows -->
+          <div
+            class="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-aneley-yellow/15 blur-3xl pointer-events-none"
+            aria-hidden="true"
+          >
+          </div>
+          <div
+            class="absolute -bottom-24 -left-16 w-60 h-60 rounded-full bg-aneley-pink/15 blur-3xl pointer-events-none"
+            aria-hidden="true"
+          >
+          </div>
+
+          <div class="relative z-10 mb-8 pt-2">
             <span
-              class="px-3 py-1 rounded-full bg-aneley-yellow-soft text-aneley-yellow font-heading font-bold text-sm uppercase tracking-wider inline-block mb-2"
+              class="px-3.5 py-1 rounded-full bg-aneley-yellow text-aneley-text font-heading font-extrabold text-xs sm:text-sm uppercase tracking-wider inline-block mb-3 shadow-sm"
             >
               Admisiones Ciclo Escolar
             </span>
             <h3
-              class="font-heading font-extrabold text-2xl sm:text-3xl text-aneley-purple"
+              class="font-heading font-extrabold text-2xl sm:text-3xl text-white leading-tight"
             >
               Solicitud de Visita & Postulación
             </h3>
-            <p class="text-sm sm:text-smm text-aneley-text-muted mt-1">
-              Completa este breve formulario y nuestro equipo de facilitadores
-              se contactará contigo para coordinar una visita personalizada.
+            <p class="text-sm sm:text-smm text-white/85 mt-1.5 leading-relaxed">
+              Completa este breve formulario y nuestro equipo se contactará
+              contigo por WhatsApp para coordinar una visita personalizada.
             </p>
           </div>
 
           <!-- The Form (WhatsApp Message Builder) -->
-          <form id="admission-form" class="space-y-5">
+          <form id="admission-form" class="relative z-10 space-y-5">
             <!-- Parent Name -->
             <div>
               <label
                 for="parent-name"
-                class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+                class="block font-heading font-bold text-smm text-white mb-1.5"
               >
                 Tu nombre (Madre, Padre o Apoderado/a) *
               </label>
@@ -210,7 +229,7 @@
                 name="parentName"
                 required
                 placeholder="Ej. Carolina Tapia González"
-                class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium"
+                class="w-full px-4 py-3.5 rounded-2xl bg-white text-aneley-text placeholder:text-aneley-text-muted/70 border-2 border-white/20 focus:border-aneley-yellow focus:ring-2 focus:ring-aneley-yellow/40 focus:outline-none transition-all text-smm font-medium shadow-sm"
               />
             </div>
 
@@ -218,7 +237,7 @@
             <div>
               <label
                 for="student-cycle"
-                class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+                class="block font-heading font-bold text-smm text-white mb-1.5"
               >
                 Nivel o motivo de consulta *
               </label>
@@ -226,7 +245,7 @@
                 id="student-cycle"
                 name="studentCycle"
                 required
-                class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium text-aneley-text"
+                class="w-full px-4 py-3.5 rounded-2xl bg-white text-aneley-text border-2 border-white/20 focus:border-aneley-yellow focus:ring-2 focus:ring-aneley-yellow/40 focus:outline-none transition-all text-smm font-medium shadow-sm"
               >
                 <option value="" disabled selected
                   >Selecciona un nivel o motivo...</option
@@ -250,7 +269,7 @@
             <div>
               <label
                 for="inquiry-message"
-                class="block font-heading font-bold text-smm text-aneley-purple mb-1.5"
+                class="block font-heading font-bold text-smm text-white mb-1.5"
               >
                 Mensaje o consulta breve *
               </label>
@@ -260,7 +279,7 @@
                 rows="4"
                 required
                 placeholder="Cuéntanos brevemente en qué podemos ayudarte o si deseas coordinar una visita guiada..."
-                class="w-full px-4 py-3 rounded-2xl bg-aneley-cream border border-aneley-sand focus:border-aneley-purple focus:ring-2 focus:ring-aneley-purple/20 transition-all text-smm font-medium resize-none"
+                class="w-full px-4 py-3.5 rounded-2xl bg-white text-aneley-text placeholder:text-aneley-text-muted/70 border-2 border-white/20 focus:border-aneley-yellow focus:ring-2 focus:ring-aneley-yellow/40 focus:outline-none transition-all text-smm font-medium resize-none shadow-sm"
               ></textarea>
             </div>
 
@@ -269,7 +288,7 @@
               <button
                 type="submit"
                 id="submit-form-btn"
-                class="w-full py-4 px-6 rounded-full bg-aneley-green hover:bg-aneley-green-fresh text-white font-heading font-bold text-smm sm:text-base shadow-whatsapp hover:shadow-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2.5"
+                class="w-full py-4 px-6 rounded-full bg-aneley-green hover:bg-aneley-green-fresh text-white font-heading font-bold text-smm sm:text-base shadow-xl border-2 border-white/25 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2.5"
               >
                 <svg
                   class="w-5 h-5 fill-current shrink-0"
@@ -283,7 +302,7 @@
                 <span>Enviar consulta por WhatsApp</span>
               </button>
 
-              <p class="text-center text-xs sm:text-sm text-aneley-text-muted">
+              <p class="text-center text-xs sm:text-sm text-white/80">
                 Se abrirá WhatsApp en una nueva pestaña con tu mensaje listo
                 para enviar.
               </p>
