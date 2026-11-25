@@ -1,5 +1,5 @@
 ---
-// Testimonials.astro - Testimonios de Familias y Comunidad Aneley
+// Testimonials.astro - Testimonios de Familias y Comunidad Aneley (Carrusel adaptativo móvil + escritorio)
 const testimonials = [
   {
     name: "Andrea Venegas",
@@ -82,7 +82,7 @@ const testimonials = [
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-12 md:mb-14">
       <span
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-aneley-yellow-soft text-aneley-yellow font-heading font-bold text-sm uppercase tracking-wider mb-4 border border-aneley-yellow-warm/80"
       >
@@ -101,14 +101,14 @@ const testimonials = [
       </p>
     </div>
 
-    <!-- Mobile Carousel Wrapper / Desktop Grid -->
-    <div class="relative">
-      <!-- Mobile Navigation Arrows -->
+    <!-- Carousel Wrapper (Mobile & Desktop) -->
+    <div class="relative md:px-14">
+      <!-- Navigation Arrows -->
       <button
         type="button"
         id="testimonials-prev"
         aria-label="Testimonio anterior"
-        class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-20 w-10 h-10 rounded-full bg-white/95 text-aneley-purple shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-40"
+        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 md:translate-x-0 z-20 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/95 hover:bg-aneley-purple text-aneley-purple hover:text-white shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
@@ -119,52 +119,58 @@ const testimonials = [
         type="button"
         id="testimonials-next"
         aria-label="Siguiente testimonio"
-        class="md:hidden absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-20 w-10 h-10 rounded-full bg-white/95 text-aneley-purple shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-40"
+        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 md:translate-x-0 z-20 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/95 hover:bg-aneley-purple text-aneley-purple hover:text-white shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
         </svg>
       </button>
 
-      <!-- Track: Horizontal swipeable carousel on mobile, 2/3-col grid on md+ -->
+      <!-- Auto-height Viewport Wrapper -->
       <div
-        id="testimonials-track"
-        class="testimonials-carousel flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 px-6 md:px-0 -mx-4 md:mx-0"
+        id="testimonials-viewport"
+        class="overflow-y-hidden transition-[height] duration-300 ease-out"
       >
-        {
-          testimonials.map((item) => (
-            <article class="testimonial-slide w-[85vw] max-w-[360px] md:w-auto md:max-w-none shrink-0 snap-center bg-white rounded-3xl p-7 shadow-card border border-aneley-sand/70 flex flex-col justify-between hover:shadow-hover md:hover:-translate-y-1 transition-all duration-300 relative">
-              <div>
-                <div class={`${item.quoteColor} text-4xl mb-2 font-serif leading-none`}>
-                  “
-                </div>
-                <p class="text-sm sm:text-smm text-aneley-text leading-relaxed italic mb-6">
-                  {item.quote}
-                </p>
-              </div>
-
-              <div class="pt-4 border-t border-aneley-sand/40 flex items-center gap-3">
-                <div
-                  class={`w-11 h-11 rounded-full ${item.badgeBg} flex items-center justify-center font-heading font-extrabold text-sm shrink-0`}
-                >
-                  {item.initials}
-                </div>
+        <!-- Horizontal Swipeable Track (items-start so each card hugs its own text) -->
+        <div
+          id="testimonials-track"
+          class="testimonials-carousel flex items-start gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 pt-2 px-6 md:px-1 -mx-4 md:mx-0"
+        >
+          {
+            testimonials.map((item) => (
+              <article class="testimonial-slide w-[85vw] max-w-[360px] md:w-[calc(50%-0.75rem)] md:max-w-none lg:w-[calc(33.333%-1rem)] shrink-0 snap-center md:snap-start bg-white rounded-3xl p-7 shadow-card border border-aneley-sand/70 flex flex-col justify-between hover:shadow-hover transition-shadow duration-300 relative">
                 <div>
-                  <h3 class="font-heading font-bold text-smm text-aneley-purple leading-tight">
-                    {item.name}
-                  </h3>
-                  <p class="text-xs sm:text-sm text-aneley-text-muted">
-                    {item.role}
+                  <div class={`${item.quoteColor} text-4xl mb-2 font-serif leading-none`}>
+                    “
+                  </div>
+                  <p class="text-sm sm:text-smm text-aneley-text leading-relaxed italic mb-6">
+                    {item.quote}
                   </p>
                 </div>
-              </div>
-            </article>
-          ))
-        }
+
+                <div class="pt-4 border-t border-aneley-sand/40 flex items-center gap-3">
+                  <div
+                    class={`w-11 h-11 rounded-full ${item.badgeBg} flex items-center justify-center font-heading font-extrabold text-sm shrink-0`}
+                  >
+                    {item.initials}
+                  </div>
+                  <div>
+                    <h3 class="font-heading font-bold text-smm text-aneley-purple leading-tight">
+                      {item.name}
+                    </h3>
+                    <p class="text-xs sm:text-sm text-aneley-text-muted">
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
       </div>
 
-      <!-- Mobile Pagination Dots & Swipe Hint -->
-      <div class="md:hidden mt-4 flex flex-col items-center gap-2">
+      <!-- Pagination Dots & Swipe Hint -->
+      <div class="mt-4 flex flex-col items-center gap-2">
         <div id="testimonials-dots" class="flex items-center justify-center gap-2">
           {
             testimonials.map((_, idx) => (
@@ -173,13 +179,13 @@ const testimonials = [
                 data-slide={idx}
                 aria-label={`Ir al testimonio ${idx + 1}`}
                 class={`testimonial-dot h-2 rounded-full transition-all duration-300 ${
-                  idx === 0 ? "w-6 bg-aneley-purple" : "w-2 bg-aneley-sand"
+                  idx === 0 ? "w-6 bg-aneley-purple" : "w-2 bg-aneley-sand hover:bg-aneley-purple/40"
                 }`}
               />
             ))
           }
         </div>
-        <span class="text-xs text-aneley-text-muted font-medium">
+        <span class="md:hidden text-xs text-aneley-text-muted font-medium">
           Desliza o usa las flechas para ver más testimonios
         </span>
       </div>
@@ -199,6 +205,7 @@ const testimonials = [
 </style>
 
 <script>
+  const viewport = document.getElementById("testimonials-viewport");
   const track = document.getElementById("testimonials-track");
   const prevBtn = document.getElementById("testimonials-prev") as HTMLButtonElement | null;
   const nextBtn = document.getElementById("testimonials-next") as HTMLButtonElement | null;
@@ -207,9 +214,36 @@ const testimonials = [
 
   let currentIndex = 0;
 
+  function getVisibleCount() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, slides.length - getVisibleCount());
+  }
+
+  function updateViewportHeight(index: number) {
+    if (!viewport || slides.length === 0) return;
+    const visibleCount = getVisibleCount();
+    let maxSlideHeight = 0;
+    for (let i = index; i < Math.min(index + visibleCount, slides.length); i++) {
+      maxSlideHeight = Math.max(maxSlideHeight, slides[i].offsetHeight);
+    }
+    if (maxSlideHeight > 0) {
+      // +32px accounts for pt-2 (8px) + pb-6 (24px) shadow breathing room
+      viewport.style.height = `${maxSlideHeight + 32}px`;
+    }
+  }
+
   function updateControls(index: number) {
-    currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+    const maxIndex = getMaxIndex();
+    currentIndex = Math.max(0, Math.min(index, maxIndex));
+
     dots.forEach((dot, i) => {
+      // Hide extra trailing dots on desktop beyond maxIndex so every dot maps to a distinct stop
+      dot.classList.toggle("hidden", i > maxIndex);
       if (i === currentIndex) {
         dot.classList.add("w-6", "bg-aneley-purple");
         dot.classList.remove("w-2", "bg-aneley-sand");
@@ -218,17 +252,22 @@ const testimonials = [
         dot.classList.add("w-2", "bg-aneley-sand");
       }
     });
+
     if (prevBtn) prevBtn.disabled = currentIndex === 0;
-    if (nextBtn) nextBtn.disabled = currentIndex === slides.length - 1;
+    if (nextBtn) nextBtn.disabled = currentIndex >= maxIndex;
+
+    updateViewportHeight(currentIndex);
   }
 
   function scrollToSlide(index: number) {
-    const clamped = Math.max(0, Math.min(index, slides.length - 1));
+    const clamped = Math.max(0, Math.min(index, getMaxIndex()));
     const slide = slides[clamped];
     if (track && slide) {
       const targetLeft =
-        slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2;
-      track.scrollTo({ left: targetLeft, behavior: "smooth" });
+        getVisibleCount() === 1
+          ? slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2
+          : slide.offsetLeft - 4;
+      track.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
       updateControls(clamped);
     }
   }
@@ -248,21 +287,37 @@ const testimonials = [
     track.addEventListener("scroll", () => {
       window.clearTimeout(scrollTimer);
       scrollTimer = window.setTimeout(() => {
-        const trackCenter = track.scrollLeft + track.clientWidth / 2;
+        const visibleCount = getVisibleCount();
         let closestIdx = 0;
         let closestDist = Infinity;
-        slides.forEach((slide, i) => {
-          const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
-          const dist = Math.abs(trackCenter - slideCenter);
+        const maxIndex = getMaxIndex();
+
+        for (let i = 0; i <= maxIndex; i++) {
+          const slide = slides[i];
+          const refPos =
+            visibleCount === 1
+              ? track.scrollLeft + track.clientWidth / 2
+              : track.scrollLeft;
+          const slidePos =
+            visibleCount === 1
+              ? slide.offsetLeft + slide.clientWidth / 2
+              : slide.offsetLeft;
+          const dist = Math.abs(refPos - slidePos);
           if (dist < closestDist) {
             closestDist = dist;
             closestIdx = i;
           }
-        });
+        }
         updateControls(closestIdx);
       }, 60);
     });
   }
 
+  window.addEventListener("resize", () => {
+    updateControls(currentIndex);
+  });
+
+  // Initial sync after layout & fonts settle
   updateControls(0);
+  window.addEventListener("load", () => updateViewportHeight(currentIndex));
 </script>
