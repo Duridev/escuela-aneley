@@ -103,12 +103,12 @@ const testimonials = [
 
     <!-- Carousel Wrapper (Mobile & Desktop) -->
     <div class="relative md:px-14">
-      <!-- Navigation Arrows -->
+      <!-- Navigation Arrows (Branded Aneley Style) -->
       <button
         type="button"
         id="testimonials-prev"
         aria-label="Testimonio anterior"
-        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 md:translate-x-0 z-20 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/95 hover:bg-aneley-purple text-aneley-purple hover:text-white shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
+        class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white border-2 border-aneley-yellow/80 shadow-pill items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
@@ -119,7 +119,7 @@ const testimonials = [
         type="button"
         id="testimonials-next"
         aria-label="Siguiente testimonio"
-        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 md:translate-x-0 z-20 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/95 hover:bg-aneley-purple text-aneley-purple hover:text-white shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
+        class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white border-2 border-aneley-yellow/80 shadow-pill items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
@@ -169,23 +169,47 @@ const testimonials = [
         </div>
       </div>
 
-      <!-- Pagination Dots & Swipe Hint -->
+      <!-- Pagination Dots & Mobile Branded Arrows -->
       <div class="mt-4 flex flex-col items-center gap-2">
-        <div id="testimonials-dots" class="flex items-center justify-center gap-2">
-          {
-            testimonials.map((_, idx) => (
-              <button
-                type="button"
-                data-slide={idx}
-                aria-label={`Ir al testimonio ${idx + 1}`}
-                class={`testimonial-dot h-2 rounded-full transition-all duration-300 ${
-                  idx === 0 ? "w-6 bg-aneley-purple" : "w-2 bg-aneley-sand hover:bg-aneley-purple/40"
-                }`}
-              />
-            ))
-          }
+        <div class="flex items-center justify-center gap-4">
+          <button
+            type="button"
+            id="testimonials-prev-mobile"
+            aria-label="Testimonio anterior"
+            class="md:hidden w-10 h-10 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white border-2 border-aneley-yellow/80 shadow-pill flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+            </svg>
+          </button>
+
+          <div id="testimonials-dots" class="flex items-center justify-center gap-1.5 sm:gap-2">
+            {
+              testimonials.map((_, idx) => (
+                <button
+                  type="button"
+                  data-slide={idx}
+                  aria-label={`Ir al testimonio ${idx + 1}`}
+                  class={`testimonial-dot h-2.5 rounded-full transition-all duration-300 ${
+                    idx === 0 ? "w-7 bg-aneley-purple" : "w-2.5 bg-aneley-sand hover:bg-aneley-purple/40"
+                  }`}
+                />
+              ))
+            }
+          </div>
+
+          <button
+            type="button"
+            id="testimonials-next-mobile"
+            aria-label="Siguiente testimonio"
+            class="md:hidden w-10 h-10 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white border-2 border-aneley-yellow/80 shadow-pill flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+          </button>
         </div>
-        <span class="md:hidden text-xs text-aneley-text-muted font-medium">
+        <span class="md:hidden text-xs font-heading font-semibold text-aneley-purple/75">
           Desliza o usa las flechas para ver más testimonios
         </span>
       </div>
@@ -209,6 +233,8 @@ const testimonials = [
   const track = document.getElementById("testimonials-track");
   const prevBtn = document.getElementById("testimonials-prev") as HTMLButtonElement | null;
   const nextBtn = document.getElementById("testimonials-next") as HTMLButtonElement | null;
+  const prevMobileBtn = document.getElementById("testimonials-prev-mobile") as HTMLButtonElement | null;
+  const nextMobileBtn = document.getElementById("testimonials-next-mobile") as HTMLButtonElement | null;
   const slides = Array.from(document.querySelectorAll<HTMLElement>(".testimonial-slide"));
   const dots = Array.from(document.querySelectorAll<HTMLButtonElement>(".testimonial-dot"));
 
@@ -245,16 +271,20 @@ const testimonials = [
       // Hide extra trailing dots on desktop beyond maxIndex so every dot maps to a distinct stop
       dot.classList.toggle("hidden", i > maxIndex);
       if (i === currentIndex) {
-        dot.classList.add("w-6", "bg-aneley-purple");
-        dot.classList.remove("w-2", "bg-aneley-sand");
+        dot.classList.add("w-7", "bg-aneley-purple");
+        dot.classList.remove("w-2.5", "bg-aneley-sand");
       } else {
-        dot.classList.remove("w-6", "bg-aneley-purple");
-        dot.classList.add("w-2", "bg-aneley-sand");
+        dot.classList.remove("w-7", "bg-aneley-purple");
+        dot.classList.add("w-2.5", "bg-aneley-sand");
       }
     });
 
-    if (prevBtn) prevBtn.disabled = currentIndex === 0;
-    if (nextBtn) nextBtn.disabled = currentIndex >= maxIndex;
+    const isStart = currentIndex === 0;
+    const isEnd = currentIndex >= maxIndex;
+    if (prevBtn) prevBtn.disabled = isStart;
+    if (nextBtn) nextBtn.disabled = isEnd;
+    if (prevMobileBtn) prevMobileBtn.disabled = isStart;
+    if (nextMobileBtn) nextMobileBtn.disabled = isEnd;
 
     updateViewportHeight(currentIndex);
   }
@@ -274,6 +304,8 @@ const testimonials = [
 
   prevBtn?.addEventListener("click", () => scrollToSlide(currentIndex - 1));
   nextBtn?.addEventListener("click", () => scrollToSlide(currentIndex + 1));
+  prevMobileBtn?.addEventListener("click", () => scrollToSlide(currentIndex - 1));
+  nextMobileBtn?.addEventListener("click", () => scrollToSlide(currentIndex + 1));
 
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {

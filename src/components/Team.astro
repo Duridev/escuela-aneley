@@ -1,11 +1,11 @@
 ---
-// Team.astro - Fundadoras y Equipo Docente de Aneley
+// Team.astro - Fundadoras y Equipo Docente de Aneley (Carrusel en móvil, grilla en md+)
 ---
 
 <section id="equipo" class="py-20 sm:py-28 bg-white relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
       <span
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-aneley-purple-soft text-aneley-purple font-heading font-bold text-sm uppercase tracking-wider mb-4 border border-aneley-purple/20"
       >
@@ -25,87 +25,209 @@
       </p>
     </div>
 
-    <!-- Team Grid (Founders + Teaching Team) -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <!-- Cofundadora 1: Claudia Gómez -->
+    <!-- Team Carousel (Mobile) / Grid (Desktop) -->
+    <div class="max-w-5xl mx-auto" data-team-carousel>
       <div
-        class="bg-aneley-ivory/60 rounded-3xl p-8 text-center border border-aneley-sand/60 shadow-sm hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center"
+        data-carousel-track
+        class="team-carousel flex md:grid md:grid-cols-3 gap-5 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth pb-3 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0"
       >
+        <!-- Cofundadora 1: Claudia Gómez -->
         <div
-          class="w-24 h-24 rounded-full bg-gradient-to-br from-aneley-purple to-aneley-purple-light text-white border-4 border-white shadow-md mb-5 flex items-center justify-center font-heading font-extrabold text-2xl"
+          data-carousel-slide
+          class="w-[82vw] max-w-[330px] md:w-auto md:max-w-none shrink-0 snap-center bg-aneley-ivory/60 rounded-3xl p-8 text-center border border-aneley-sand/60 shadow-sm hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center"
         >
-          CG
+          <div
+            class="w-24 h-24 rounded-full bg-gradient-to-br from-aneley-purple to-aneley-purple-light text-white border-4 border-white shadow-md mb-5 flex items-center justify-center font-heading font-extrabold text-2xl"
+          >
+            CG
+          </div>
+          <span
+            class="text-[11px] font-bold px-3 py-1 rounded-full bg-aneley-purple text-white mb-2 uppercase tracking-wider"
+          >
+            Profesora Cofundadora
+          </span>
+          <h3 class="font-heading font-bold text-xl text-aneley-purple mb-1">
+            Claudia Gómez
+          </h3>
+          <p class="text-sm font-semibold text-aneley-yellow mb-4">
+            Fundadora · Desde 2018
+          </p>
+          <p class="text-sm text-aneley-text-muted leading-relaxed">
+            Impulsora del proyecto educativo Aneley con la convicción de ofrecer
+            una educación vivencial, respetuosa y acompañada en cocrianza con las
+            familias.
+          </p>
         </div>
-        <span
-          class="text-[11px] font-bold px-3 py-1 rounded-full bg-aneley-purple text-white mb-2 uppercase tracking-wider"
+
+        <!-- Cofundadora 2: Tatiana González -->
+        <div
+          data-carousel-slide
+          class="w-[82vw] max-w-[330px] md:w-auto md:max-w-none shrink-0 snap-center bg-aneley-ivory/60 rounded-3xl p-8 text-center border border-aneley-sand/60 shadow-sm hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center"
         >
-          Profesora Cofundadora
-        </span>
-        <h3 class="font-heading font-bold text-xl text-aneley-purple mb-1">
-          Claudia Gómez
-        </h3>
-        <p class="text-sm font-semibold text-aneley-yellow mb-4">
-          Fundadora · Desde 2018
-        </p>
-        <p class="text-sm text-aneley-text-muted leading-relaxed">
-          Impulsora del proyecto educativo Aneley con la convicción de ofrecer
-          una educación vivencial, respetuosa y acompañada en cocrianza con las
-          familias.
-        </p>
+          <div
+            class="w-24 h-24 rounded-full bg-gradient-to-br from-aneley-green to-aneley-green-light text-white border-4 border-white shadow-md mb-5 flex items-center justify-center font-heading font-extrabold text-2xl"
+          >
+            TG
+          </div>
+          <span
+            class="text-[11px] font-bold px-3 py-1 rounded-full bg-aneley-green text-white mb-2 uppercase tracking-wider"
+          >
+            Profesora Cofundadora
+          </span>
+          <h3 class="font-heading font-bold text-xl text-aneley-purple mb-1">
+            Tatiana González
+          </h3>
+          <p class="text-sm font-semibold text-aneley-green mb-4">
+            Fundadora · Desde 2018
+          </p>
+          <p class="text-sm text-aneley-text-muted leading-relaxed">
+            Comprometida con el sueño compartido de construir un espacio seguro,
+            afectivo y libre donde cada estudiante desarrolle sus potencialidades.
+          </p>
+        </div>
+
+        <!-- Equipo Docente -->
+        <div
+          data-carousel-slide
+          class="w-[82vw] max-w-[330px] md:w-auto md:max-w-none shrink-0 snap-center bg-aneley-ivory/60 rounded-3xl p-8 text-center border border-aneley-sand/60 shadow-sm hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center"
+        >
+          <div
+            class="w-24 h-24 rounded-full bg-gradient-to-br from-aneley-yellow to-aneley-pink text-white border-4 border-white shadow-md mb-5 flex items-center justify-center text-3xl"
+          >
+            🦋
+          </div>
+          <span
+            class="text-[11px] font-bold px-3 py-1 rounded-full bg-aneley-pink text-white mb-2 uppercase tracking-wider"
+          >
+            1° a 8° Básico
+          </span>
+          <h3 class="font-heading font-bold text-xl text-aneley-purple mb-1">
+            Equipo Docente Aneley
+          </h3>
+          <p class="text-sm font-semibold text-aneley-pink mb-4">
+            Acompañamiento Integral
+          </p>
+          <p class="text-sm text-aneley-text-muted leading-relaxed">
+            Un equipo comprometido con el Método Lefebre Lever que acompaña el
+            desarrollo emocional, cognitivo y académico de cada niño y niña en
+            toda la enseñanza básica.
+          </p>
+        </div>
       </div>
 
-      <!-- Cofundadora 2: Tatiana González -->
-      <div
-        class="bg-aneley-ivory/60 rounded-3xl p-8 text-center border border-aneley-sand/60 shadow-sm hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center"
-      >
-        <div
-          class="w-24 h-24 rounded-full bg-gradient-to-br from-aneley-green to-aneley-green-light text-white border-4 border-white shadow-md mb-5 flex items-center justify-center font-heading font-extrabold text-2xl"
-        >
-          TG
-        </div>
-        <span
-          class="text-[11px] font-bold px-3 py-1 rounded-full bg-aneley-green text-white mb-2 uppercase tracking-wider"
-        >
-          Profesora Cofundadora
-        </span>
-        <h3 class="font-heading font-bold text-xl text-aneley-purple mb-1">
-          Tatiana González
-        </h3>
-        <p class="text-sm font-semibold text-aneley-green mb-4">
-          Fundadora · Desde 2018
-        </p>
-        <p class="text-sm text-aneley-text-muted leading-relaxed">
-          Comprometida con el sueño compartido de construir un espacio seguro,
-          afectivo y libre donde cada estudiante desarrolle sus potencialidades.
-        </p>
-      </div>
+      <!-- Mobile Carousel Controls (Branded Aneley Style) -->
+      <div class="md:hidden mt-4 flex flex-col items-center gap-2">
+        <div class="flex items-center justify-center gap-4">
+          <button
+            type="button"
+            data-carousel-prev
+            aria-label="Integrante anterior"
+            class="w-10 h-10 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white border-2 border-aneley-yellow/80 shadow-pill flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+            </svg>
+          </button>
 
-      <!-- Equipo Docente -->
-      <div
-        class="bg-aneley-ivory/60 rounded-3xl p-8 text-center border border-aneley-sand/60 shadow-sm hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center"
-      >
-        <div
-          class="w-24 h-24 rounded-full bg-gradient-to-br from-aneley-yellow to-aneley-pink text-white border-4 border-white shadow-md mb-5 flex items-center justify-center text-3xl"
-        >
-          🦋
+          <div class="flex items-center gap-2" data-carousel-dots>
+            <button type="button" data-dot="0" aria-label="Claudia Gómez" class="h-2.5 w-7 rounded-full bg-aneley-purple transition-all duration-300"></button>
+            <button type="button" data-dot="1" aria-label="Tatiana González" class="h-2.5 w-2.5 rounded-full bg-aneley-sand transition-all duration-300"></button>
+            <button type="button" data-dot="2" aria-label="Equipo Docente" class="h-2.5 w-2.5 rounded-full bg-aneley-sand transition-all duration-300"></button>
+          </div>
+
+          <button
+            type="button"
+            data-carousel-next
+            aria-label="Siguiente integrante"
+            class="w-10 h-10 rounded-full bg-aneley-purple hover:bg-aneley-purple-light text-white border-2 border-aneley-yellow/80 shadow-pill flex items-center justify-center active:scale-95 transition-all disabled:opacity-35 disabled:pointer-events-none"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+            </svg>
+          </button>
         </div>
-        <span
-          class="text-[11px] font-bold px-3 py-1 rounded-full bg-aneley-pink text-white mb-2 uppercase tracking-wider"
-        >
-          1° a 8° Básico
+        <span class="text-xs font-heading font-semibold text-aneley-purple/75">
+          Desliza o usa las flechas para conocer al equipo
         </span>
-        <h3 class="font-heading font-bold text-xl text-aneley-purple mb-1">
-          Equipo Docente Aneley
-        </h3>
-        <p class="text-sm font-semibold text-aneley-pink mb-4">
-          Acompañamiento Integral
-        </p>
-        <p class="text-sm text-aneley-text-muted leading-relaxed">
-          Un equipo comprometido con el Método Lefebre Lever que acompaña el
-          desarrollo emocional, cognitivo y académico de cada niño y niña en
-          toda la enseñanza básica.
-        </p>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .team-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .team-carousel::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  const teamRoot = document.querySelector<HTMLElement>("[data-team-carousel]");
+  if (teamRoot) {
+    const track = teamRoot.querySelector<HTMLElement>("[data-carousel-track]");
+    const slides = Array.from(teamRoot.querySelectorAll<HTMLElement>("[data-carousel-slide]"));
+    const prevBtn = teamRoot.querySelector<HTMLButtonElement>("[data-carousel-prev]");
+    const nextBtn = teamRoot.querySelector<HTMLButtonElement>("[data-carousel-next]");
+    const dots = Array.from(teamRoot.querySelectorAll<HTMLButtonElement>("[data-dot]"));
+
+    let activeIdx = 0;
+
+    function updateState(idx: number) {
+      activeIdx = Math.max(0, Math.min(idx, slides.length - 1));
+      dots.forEach((dot, i) => {
+        if (i === activeIdx) {
+          dot.classList.add("w-7", "bg-aneley-purple");
+          dot.classList.remove("w-2.5", "bg-aneley-sand");
+        } else {
+          dot.classList.remove("w-7", "bg-aneley-purple");
+          dot.classList.add("w-2.5", "bg-aneley-sand");
+        }
+      });
+      if (prevBtn) prevBtn.disabled = activeIdx === 0;
+      if (nextBtn) nextBtn.disabled = activeIdx === slides.length - 1;
+    }
+
+    function goTo(idx: number) {
+      const clamped = Math.max(0, Math.min(idx, slides.length - 1));
+      const slide = slides[clamped];
+      if (!track || !slide) return;
+      const targetLeft =
+        slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2;
+      track.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+      updateState(clamped);
+    }
+
+    prevBtn?.addEventListener("click", () => goTo(activeIdx - 1));
+    nextBtn?.addEventListener("click", () => goTo(activeIdx + 1));
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => goTo(Number(dot.dataset.dot || 0)));
+    });
+
+    if (track) {
+      let scrollTimer: number | undefined;
+      track.addEventListener("scroll", () => {
+        window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(() => {
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let bestIdx = 0;
+          let bestDist = Infinity;
+          slides.forEach((slide, i) => {
+            const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
+            const dist = Math.abs(center - slideCenter);
+            if (dist < bestDist) {
+              bestDist = dist;
+              bestIdx = i;
+            }
+          });
+          updateState(bestIdx);
+        }, 60);
+      });
+    }
+
+    updateState(0);
+  }
+</script>
