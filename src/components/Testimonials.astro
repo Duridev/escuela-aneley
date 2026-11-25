@@ -1,5 +1,79 @@
 ---
 // Testimonials.astro - Testimonios de Familias y Comunidad Aneley
+const testimonials = [
+  {
+    name: "Andrea Venegas",
+    role: "Apoderada · 1° Básico",
+    quote:
+      "Con mi marido estamos muy felices por todo lo vivido este año 2026. Mi hija entró a primero básico y teníamos muchas aprehensiones respecto a su adaptación. Sin embargo desde el primer momento (fines del 2025), se nos dio la oportunidad de conversar con las encargadas, específicamente con Claudia, quien fue muy amable en contarnos todo el funcionamiento y los pilares en los que se basa la educación libre y feliz. Nos encantó el sistema. Mi hija pudo participar de una jornada de pasantía gratuita para evaluar si le gustaba la Escuela. A ella le encantó el especio y el ambiente. Decidimos matricularla para su primer año y no nos arrepentimos. Aprendió a leer, escribir, sumar, restar, etc, a compartir, a disertar, a convivir en un espacio seguro. Sólo tengo agradecimiento hacia la Escuela y principalmente sus profesoras que son personas con gran vocación. Recomiendo mucho este estilo de educación si estamos pensando en el bienestar de los niños y niñas.",
+    initials: "AV",
+    quoteColor: "text-aneley-purple",
+    badgeBg: "bg-aneley-purple-soft text-aneley-purple",
+  },
+  {
+    name: "Paulina Bórquez León",
+    role: "Familia Aneley · 3 años en la escuela",
+    quote:
+      "Llegamos con nuestro hijo hace 3 años, y ha sido un espacio respetuoso sobre todo con las necesidades que nuestro pequeño ha presentado. Un ambiente pequeño y acogedor en dónde a tendido grandes logros también académicos.",
+    initials: "PB",
+    quoteColor: "text-aneley-green",
+    badgeBg: "bg-aneley-green-soft text-aneley-green",
+  },
+  {
+    name: "Claudio Romero",
+    role: "Familia Aneley",
+    quote:
+      "Un hermoso lugar, que educó a nuestras hijas. Estamos muy agradecidos y las recordamos con mucho cariño siempre.",
+    initials: "CR",
+    quoteColor: "text-aneley-yellow",
+    badgeBg: "bg-aneley-yellow-soft text-aneley-yellow",
+  },
+  {
+    name: "Soledad Anguita Biceño",
+    role: "Familia visitante",
+    quote:
+      "Somos de otra comuna, pero de igual manera fuimos a conocer el lugar, super acogedor, los profes se ven atentos, se ve el trabajo por los niños. Excelente iniciativa.",
+    initials: "SA",
+    quoteColor: "text-aneley-pink",
+    badgeBg: "bg-aneley-pink-soft text-aneley-pink",
+  },
+  {
+    name: "Máximo Escobar",
+    role: "Familia Aneley",
+    quote:
+      "Exelente servicio 100% salgan de duda y lleguen al lungar y hablen con las tías. Son un amor, son un 7 Gracias..",
+    initials: "ME",
+    quoteColor: "text-aneley-purple",
+    badgeBg: "bg-aneley-purple-soft text-aneley-purple",
+  },
+  {
+    name: "Carmen Gloria Sepúlveda",
+    role: "Abuela de Sarai · Limache",
+    quote:
+      "Mi nieta Sarai está en esta escuelita y cada día llega feliz contándome que se divierte mucho con sus amigos, en el huerto y con las guías. Como abuela, verla crecer sin miedos, respetada y con una sonrisa sincera en el rostro es la mayor bendición.",
+    initials: "CG",
+    quoteColor: "text-aneley-yellow",
+    badgeBg: "bg-aneley-pink-soft text-aneley-pink",
+  },
+  {
+    name: "Valentina & Felipe",
+    role: "Papás de Lucas (8 años) · Olmué",
+    quote:
+      "Veníamos de una escuela tradicional donde mi hijo sufría de ansiedad los domingos por las tareas y las notas. Llegar a Aneley fue un respiro de vida: recuperó las ganas de investigar, sus emociones son escuchadas y rindió sus exámenes libres de manera brillante y tranquila.",
+    initials: "VF",
+    quoteColor: "text-aneley-green",
+    badgeBg: "bg-aneley-green-soft text-aneley-green",
+  },
+  {
+    name: "Marcela Echeverría",
+    role: "Mamá de Sofía · Limache Viejo",
+    quote:
+      "Lo que más valoramos como familia es la co-crianza real. En Aneley no eres un cliente ni un número de matrícula: eres parte de una tribu que acompaña el crecimiento de los niños con ternura, asambleas conscientes y amor por la tierra de Limache.",
+    initials: "ME",
+    quoteColor: "text-aneley-purple",
+    badgeBg: "bg-aneley-purple-soft text-aneley-purple",
+  },
+];
 ---
 
 <section
@@ -8,7 +82,7 @@
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
       <span
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-aneley-yellow-soft text-aneley-yellow font-heading font-bold text-sm uppercase tracking-wider mb-4 border border-aneley-yellow-warm/80"
       >
@@ -27,113 +101,168 @@
       </p>
     </div>
 
-    <!-- Testimonials Grid (3 Cards) -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Testimonio 1 (Real de su comunidad) -->
-      <div
-        class="bg-white rounded-3xl p-8 shadow-card border border-aneley-sand/70 flex flex-col justify-between hover:shadow-hover hover:-translate-y-1 transition-all duration-300 relative"
+    <!-- Mobile Carousel Wrapper / Desktop Grid -->
+    <div class="relative">
+      <!-- Mobile Navigation Arrows -->
+      <button
+        type="button"
+        id="testimonials-prev"
+        aria-label="Testimonio anterior"
+        class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-20 w-10 h-10 rounded-full bg-white/95 text-aneley-purple shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-40"
       >
-        <div class="text-aneley-yellow text-4xl mb-3 font-serif leading-none">
-          “
-        </div>
-        <p
-          class="text-smm sm:text-base text-aneley-text leading-relaxed italic mb-6"
-        >
-          Mi nieta Sarai está en esta escuelita y cada día llega feliz
-          contándome que se divierte mucho con sus amigos, en el huerto y con
-          las guías. Como abuela, verla crecer sin miedos, respetada y con una
-          sonrisa sincera en el rostro es la mayor bendición.
-        </p>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+        </svg>
+      </button>
 
-        <div
-          class="pt-4 border-t border-aneley-sand/40 flex items-center gap-3"
-        >
-          <div
-            class="w-11 h-11 rounded-full bg-aneley-pink-soft text-aneley-pink flex items-center justify-center font-bold text-lg"
-          >
-            👵
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-smm text-aneley-purple">
-              Carmen Gloria Sepúlveda
-            </h3>
-            <p class="text-sm text-aneley-text-muted">
-              Abuela de Sarai · Limache
-            </p>
-          </div>
-        </div>
+      <button
+        type="button"
+        id="testimonials-next"
+        aria-label="Siguiente testimonio"
+        class="md:hidden absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-20 w-10 h-10 rounded-full bg-white/95 text-aneley-purple shadow-card border border-aneley-purple/15 flex items-center justify-center active:scale-95 transition-all disabled:opacity-40"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+        </svg>
+      </button>
+
+      <!-- Track: Horizontal swipeable carousel on mobile, 2/3-col grid on md+ -->
+      <div
+        id="testimonials-track"
+        class="testimonials-carousel flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 px-6 md:px-0 -mx-4 md:mx-0"
+      >
+        {
+          testimonials.map((item) => (
+            <article class="testimonial-slide w-[85vw] max-w-[360px] md:w-auto md:max-w-none shrink-0 snap-center bg-white rounded-3xl p-7 shadow-card border border-aneley-sand/70 flex flex-col justify-between hover:shadow-hover md:hover:-translate-y-1 transition-all duration-300 relative">
+              <div>
+                <div class={`${item.quoteColor} text-4xl mb-2 font-serif leading-none`}>
+                  “
+                </div>
+                <p class="text-sm sm:text-smm text-aneley-text leading-relaxed italic mb-6">
+                  {item.quote}
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-aneley-sand/40 flex items-center gap-3">
+                <div
+                  class={`w-11 h-11 rounded-full ${item.badgeBg} flex items-center justify-center font-heading font-extrabold text-sm shrink-0`}
+                >
+                  {item.initials}
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-smm text-aneley-purple leading-tight">
+                    {item.name}
+                  </h3>
+                  <p class="text-xs sm:text-sm text-aneley-text-muted">
+                    {item.role}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
       </div>
 
-      <!-- Testimonio 2 -->
-      <div
-        class="bg-white rounded-3xl p-8 shadow-card border border-aneley-sand/70 flex flex-col justify-between hover:shadow-hover hover:-translate-y-1 transition-all duration-300 relative"
-      >
-        <div class="text-aneley-green text-4xl mb-3 font-serif leading-none">
-          “
+      <!-- Mobile Pagination Dots & Swipe Hint -->
+      <div class="md:hidden mt-4 flex flex-col items-center gap-2">
+        <div id="testimonials-dots" class="flex items-center justify-center gap-2">
+          {
+            testimonials.map((_, idx) => (
+              <button
+                type="button"
+                data-slide={idx}
+                aria-label={`Ir al testimonio ${idx + 1}`}
+                class={`testimonial-dot h-2 rounded-full transition-all duration-300 ${
+                  idx === 0 ? "w-6 bg-aneley-purple" : "w-2 bg-aneley-sand"
+                }`}
+              />
+            ))
+          }
         </div>
-        <p
-          class="text-smm sm:text-base text-aneley-text leading-relaxed italic mb-6"
-        >
-          Veníamos de una escuela tradicional donde mi hijo sufría de ansiedad
-          los domingos por las tareas y las notas. Llegar a Aneley fue un
-          respiro de vida: recuperó las ganas de investigar, sus emociones son
-          escuchadas y rindió sus exámenes libres de manera brillante y
-          tranquila.
-        </p>
-
-        <div
-          class="pt-4 border-t border-aneley-sand/40 flex items-center gap-3"
-        >
-          <div
-            class="w-11 h-11 rounded-full bg-aneley-green-soft text-aneley-green flex items-center justify-center font-bold text-lg"
-          >
-            🌿
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-smm text-aneley-purple">
-              Valentina & Felipe
-            </h3>
-            <p class="text-sm text-aneley-text-muted">
-              Papás de Lucas (8 años) · Olmué
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonio 3 -->
-      <div
-        class="bg-white rounded-3xl p-8 shadow-card border border-aneley-sand/70 flex flex-col justify-between hover:shadow-hover hover:-translate-y-1 transition-all duration-300 relative"
-      >
-        <div class="text-aneley-purple text-4xl mb-3 font-serif leading-none">
-          “
-        </div>
-        <p
-          class="text-smm sm:text-base text-aneley-text leading-relaxed italic mb-6"
-        >
-          Lo que más valoramos como familia es la co-crianza real. En Aneley no
-          eres un cliente ni un número de matrícula: eres parte de una tribu que
-          acompaña el crecimiento de los niños con ternura, asambleas
-          conscientes y amor por la tierra de Limache.
-        </p>
-
-        <div
-          class="pt-4 border-t border-aneley-sand/40 flex items-center gap-3"
-        >
-          <div
-            class="w-11 h-11 rounded-full bg-aneley-purple-soft text-aneley-purple flex items-center justify-center font-bold text-lg"
-          >
-            🌻
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-smm text-aneley-purple">
-              Marcela Echeverría
-            </h3>
-            <p class="text-sm text-aneley-text-muted">
-              Mamá de Sofía (5 años) · Limache Viejo
-            </p>
-          </div>
-        </div>
+        <span class="text-xs text-aneley-text-muted font-medium">
+          Desliza o usa las flechas para ver más testimonios
+        </span>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .testimonials-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .testimonials-carousel::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  const track = document.getElementById("testimonials-track");
+  const prevBtn = document.getElementById("testimonials-prev") as HTMLButtonElement | null;
+  const nextBtn = document.getElementById("testimonials-next") as HTMLButtonElement | null;
+  const slides = Array.from(document.querySelectorAll<HTMLElement>(".testimonial-slide"));
+  const dots = Array.from(document.querySelectorAll<HTMLButtonElement>(".testimonial-dot"));
+
+  let currentIndex = 0;
+
+  function updateControls(index: number) {
+    currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) {
+        dot.classList.add("w-6", "bg-aneley-purple");
+        dot.classList.remove("w-2", "bg-aneley-sand");
+      } else {
+        dot.classList.remove("w-6", "bg-aneley-purple");
+        dot.classList.add("w-2", "bg-aneley-sand");
+      }
+    });
+    if (prevBtn) prevBtn.disabled = currentIndex === 0;
+    if (nextBtn) nextBtn.disabled = currentIndex === slides.length - 1;
+  }
+
+  function scrollToSlide(index: number) {
+    const clamped = Math.max(0, Math.min(index, slides.length - 1));
+    const slide = slides[clamped];
+    if (track && slide) {
+      const targetLeft =
+        slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2;
+      track.scrollTo({ left: targetLeft, behavior: "smooth" });
+      updateControls(clamped);
+    }
+  }
+
+  prevBtn?.addEventListener("click", () => scrollToSlide(currentIndex - 1));
+  nextBtn?.addEventListener("click", () => scrollToSlide(currentIndex + 1));
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const idx = Number(dot.dataset.slide || 0);
+      scrollToSlide(idx);
+    });
+  });
+
+  if (track) {
+    let scrollTimer: number | undefined;
+    track.addEventListener("scroll", () => {
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(() => {
+        const trackCenter = track.scrollLeft + track.clientWidth / 2;
+        let closestIdx = 0;
+        let closestDist = Infinity;
+        slides.forEach((slide, i) => {
+          const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
+          const dist = Math.abs(trackCenter - slideCenter);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closestIdx = i;
+          }
+        });
+        updateControls(closestIdx);
+      }, 60);
+    });
+  }
+
+  updateControls(0);
+</script>
