@@ -6,52 +6,41 @@ interface Props {
 }
 
 const {
-  title = "Aneley · Escuela Libre y Feliz | Limache, Chile",
-  description = "Espacio educativo libre y feliz en Limache (1° a 8° básico). Educación vivencial, amigable y significativa en cocrianza con las familias bajo el Método Lefebre Lever.",
-  image = "/logo-aneley.webp",
+  title = "Aneley · Escuela Libre y Feliz en Limache | 1° a 8° Básico",
+  description = "Espacio educativo libre y feliz en Limache (1° a 8° básico). Educación vivencial, amigable y significativa en cocrianza con las familias bajo el Método Lefebre Lever y exámenes libres MINEDUC.",
+  image = "/hero.jpg",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://escuela-aneley.cl");
----
+const siteURL = Astro.site || new URL("https://escuela-aneley.cl");
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const socialImageURL = new URL(image, siteURL).href;
+const logoURL = new URL("/logo-aneley.webp", siteURL).href;
 
-<!doctype html>
-<html lang="es" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <link rel="icon" type="image/webp" href="/logo-aneley.webp" />
-    <meta name="generator" content={Astro.generator} />
-
-    <!-- SEO Primary Tags -->
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="keywords" content="escuela libre limache, escuela alternativa limache, metodo lefebre lever, educacion respetuosa limache, examenes libres mineduc chile, colegio alternativo olmue valparaiso, educacion en la naturaleza chile" />
-    <meta name="author" content="Aneley - Escuela Libre y Feliz" />
-    <link rel="canonical" href={canonicalURL} />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:locale" content="es_CL" />
-    <meta property="og:site_name" content="Aneley Escuela Libre y Feliz" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
-
-    <!-- Structured Data (JSON-LD) for LocalBusiness & EducationalOrganization -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": ["EducationalOrganization", "LocalBusiness"],
-      "name": "Aneley Escuela Libre y Feliz",
-      "image": "https://escuela-aneley.cl/logo-aneley.webp",
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://escuela-aneley.cl/#website",
+      "url": "https://escuela-aneley.cl/",
+      "name": "Aneley · Escuela Libre y Feliz",
+      "description": description,
+      "inLanguage": "es-CL"
+    },
+    {
+      "@type": ["School", "EducationalOrganization"],
+      "@id": "https://escuela-aneley.cl/#school",
+      "name": "Aneley · Escuela Libre y Feliz",
+      "alternateName": "Escuela Aneley Limache",
+      "url": "https://escuela-aneley.cl/",
+      "logo": logoURL,
+      "image": [socialImageURL, logoURL],
+      "description": description,
+      "foundingDate": "2018",
+      "founders": [
+        { "@type": "Person", "name": "Claudia Gómez" },
+        { "@type": "Person", "name": "Tatiana González" }
+      ],
       "telephone": "+56956240280",
       "email": "Aneleylibreyfeliz@gmail.com",
       "address": {
@@ -67,22 +56,116 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://escuela-
         "latitude": -32.9886301,
         "longitude": -71.2645447
       },
+      "areaServed": [
+        { "@type": "City", "name": "Limache" },
+        { "@type": "City", "name": "Olmué" },
+        { "@type": "City", "name": "Quillota" },
+        { "@type": "City", "name": "Villa Alemana" },
+        { "@type": "City", "name": "Quilpué" }
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "08:00",
-          "closes": "13:00/13:45"
+          "closes": "13:45"
         }
       ],
       "sameAs": [
         "https://www.facebook.com/Aneley-Escuela-Libre-y-Feliz-Limache-1886476048269272",
         "https://www.instagram.com/aneley_escuela_libreyfeliz/"
-      ],
-      "description": description
-    })} />
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://escuela-aneley.cl/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo funcionan los exámenes libres ante el MINEDUC en Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La ley chilena permite a los niños y niñas rendir exámenes libres anuales para certificar y convalidar sus estudios de enseñanza básica (1° a 8° básico). El Ministerio de Educación asigna un establecimiento examinador público o subvencionado en la comuna de Limache o provincia. En Aneley preparamos de forma integral y sin estrés todos los contenidos requeridos por el currículum oficial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se evalúa a los niños si no usan notas tradicionales del 1 al 7?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utilizamos una evaluación formativa, cualitativa y continua mediante bitácoras de avance, portafolios de proyectos y autoevaluaciones reflexivas, entregando informes cualitativos detallados y realizando reuniones periódicas con las familias."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo es el proceso de admisión y visita guiada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No realizamos exámenes de admisión ni entrevistas selectivas. El proceso comienza con una visita y conversación con la familia para compartir nuestra filosofía educativa, seguida de una jornada de adaptación vivencial para que el niño o niña conozca el espacio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Aceptan niños de comunas cercanas (Olmué, Quillota, Villa Alemana)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Nuestra ubicación en Limache (Condell 877) cuenta con excelente conectividad vehicular y cercanía con la Estación Limache del Metro Valparaíso (EFE), recibiendo familias de Limache, Olmué, Quillota, Villa Alemana y Quilpué."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
 
-    <!-- Preconnect Fonts -->
+<!doctype html>
+<html lang="es-CL" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#6B2D82" />
+    <link rel="icon" type="image/webp" href="/logo-aneley.webp" />
+    <link rel="apple-touch-icon" href="/logo-aneley.webp" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primary Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="escuela libre limache, escuela alternativa limache, escuela libre y feliz limache, metodo lefebre lever chile, educacion respetuosa limache, examenes libres mineduc basica, colegio alternativo olmue quillota villa alemana, enseñanza basica alternativa valparaiso" />
+    <meta name="author" content="Aneley · Escuela Libre y Feliz" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Local SEO Geo Tags -->
+    <meta name="geo.region" content="CL-VS" />
+    <meta name="geo.placename" content="Limache, Región de Valparaíso, Chile" />
+    <meta name="geo.position" content="-32.9886301;-71.2645447" />
+    <meta name="ICBM" content="-32.9886301, -71.2645447" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:alt" content="Niños y niñas aprendiendo en Aneley Escuela Libre y Feliz en Limache" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="Aneley · Escuela Libre y Feliz" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL.href} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta name="twitter:image:alt" content="Niños y niñas aprendiendo en Aneley Escuela Libre y Feliz en Limache" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <!-- Performance: Preload LCP Hero Image & Preconnect Fonts -->
+    <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
