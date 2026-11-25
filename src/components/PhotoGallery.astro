@@ -1,0 +1,401 @@
+---
+// PhotoGallery.astro - Galería fotográfica editorial con proporciones 3:4 y 4:3 y despliegue suave
+
+interface GalleryPhoto {
+  src: string;
+  alt: string;
+  span: string;
+}
+
+// Primeras 2 filas visibles (4 columnas x 2 filas = 8 unidades exactas en escritorio)
+const initialPhotos: GalleryPhoto[] = [
+  {
+    src: "/galeria/17e18adb-0368-48b7-aece-0c232c287ea0.jpg",
+    alt: "Momentos de aprendizaje y juego en Aneley",
+    span: "col-span-2 row-span-2", // 4:3 destacada (2x2)
+  },
+  {
+    src: "/galeria/39d6e2bd-3442-41a7-bdfa-b31d2ee37d8a.jpg",
+    alt: "Actividad vivencial en Aneley",
+    span: "col-span-1 row-span-2", // 3:4 vertical (1x2)
+  },
+  {
+    src: "/galeria/1d64f4c5-a7e7-4fee-ac40-b52d838bb229.jpg",
+    alt: "Compartiendo en comunidad en Aneley",
+    span: "col-span-1 row-span-1", // 4:3 horizontal (1x1)
+  },
+  {
+    src: "/galeria/2a54b626-d140-417c-ba8b-099cb4e6b3c7.jpg",
+    alt: "Exploración al aire libre en Aneley",
+    span: "col-span-1 row-span-1", // 4:3 horizontal (1x1)
+  },
+];
+
+// Resto de la galería (30 fotos con proporciones 3:4 y 4:3 intercaladas en mosaico denso)
+const extraPhotos: GalleryPhoto[] = [
+  {
+    src: "/galeria/323407461_906586883691249_5729616785077410934_n.jpg",
+    alt: "Jornada al aire libre en Aneley",
+    span: "col-span-2 row-span-1", // 16:9 panorámica
+  },
+  {
+    src: "/galeria/3cc74cd8-00d2-4854-89eb-18a7e872219c.jpg",
+    alt: "Estudiantes en actividad creativa",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/465928096_10234116241388613_8971199491128533108_n.jpg",
+    alt: "Sonrisas y aprendizaje en la escuela",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/75cba7a8-1c8a-40f6-9e00-97e6db2225cb.jpg",
+    alt: "Trabajo colaborativo en Aneley",
+    span: "col-span-2 row-span-1", // 4:3 ancha
+  },
+  {
+    src: "/galeria/4a996b65-0408-4e4b-8d4d-964f5173acc2.jpg",
+    alt: "Descubriendo en comunidad",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/849225847_28873066035623366_1531585949687437865_n.jpg",
+    alt: "Actividades en el patio de Aneley",
+    span: "col-span-2 row-span-2", // 4:3 destacada
+  },
+  {
+    src: "/galeria/66ea3ff7-d77e-48b6-a3cb-2b5cd7f8ad92.jpg",
+    alt: "Expresión y movimiento libre",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/850588067_28873143642282272_5720356315791573990_n.jpg",
+    alt: "Experiencias compartidas en la escuela",
+    span: "col-span-2 row-span-1", // 4:3
+  },
+  {
+    src: "/galeria/6f5f7f18-3c08-46a5-b19f-fb2dbfac8686.jpg",
+    alt: "Niños y niñas creando en taller",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/754e4956-ef77-41c3-85a6-8c8db1cd5df1.jpg",
+    alt: "Aprender jugando en Aneley",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/857872795_10244222565160391_5884771929762510531_n.jpg",
+    alt: "Comunidad educativa en Limache",
+    span: "col-span-2 row-span-1", // 4:3
+  },
+  {
+    src: "/galeria/852243744_28872987505631219_3279886973353919769_n.jpg",
+    alt: "Momentos cotidianos en Aneley",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/905457361_1991024455573371_1688697561286203943_n.jpg",
+    alt: "Juego y aprendizaje significativo",
+    span: "col-span-1 row-span-1", // 4:3
+  },
+  {
+    src: "/galeria/912543705_1994110645264752_7688741925812492185_n.jpg",
+    alt: "Encuentro escolar en Aneley",
+    span: "col-span-2 row-span-2", // 4:3 destacada
+  },
+  {
+    src: "/galeria/913419748_1993970001945483_387252747615610940_n.jpg",
+    alt: "Actividad grupal en Aneley",
+    span: "col-span-1 row-span-1", // 4:3
+  },
+  {
+    src: "/galeria/896276131_1992673978741752_7957729389870486034_n.jpg",
+    alt: "Exploración y curiosidad en la escuela",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/907848800_1992631615412655_2060801659851476738_n.jpg",
+    alt: "Taller vivencial de estudiantes",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/IMG_7210.JPG",
+    alt: "Actividad comunitaria en Aneley",
+    span: "col-span-2 row-span-1", // 16:9 panorámica
+  },
+  {
+    src: "/galeria/IMG_7221.JPG",
+    alt: "Jornada especial en Aneley",
+    span: "col-span-2 row-span-1", // 16:9 panorámica
+  },
+  {
+    src: "/galeria/910134825_1993139492028534_8874314507897394947_n.jpg",
+    alt: "Aprendiendo desde la experiencia",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/910231461_1994063548602795_2498563707214557643_n.jpg",
+    alt: "Creatividad y juego libre",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/ada2a1bb-4d07-4cfe-9950-c2ca5f7c0098%20(1).jpg",
+    alt: "Compartiendo en la naturaleza",
+    span: "col-span-2 row-span-2", // 4:3 destacada
+  },
+  {
+    src: "/galeria/914802583_10244643610606264_1096158991545739125_n.jpg",
+    alt: "Niños y niñas en Aneley",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/9f76e6bf-8a8a-45eb-af07-4ef58f601431.jpg",
+    alt: "Día a día en la escuela",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/aaaa.jpg",
+    alt: "Actividad práctica en Aneley",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/aaaaaaaaaa.jpg",
+    alt: "Momentos felices en Aneley",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/b8521200-5fa7-485f-baf8-6243e245bfa6.jpg",
+    alt: "Aprendizaje en movimiento",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/b9aa57be-57b8-420b-8b48-fd18d90affc8.jpg",
+    alt: "Espacio seguro y afectivo",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/d34feed4-f08b-492c-a198-6797f12c63aa.jpg",
+    alt: "Compartiendo saberes en Aneley",
+    span: "col-span-1 row-span-2", // 3:4
+  },
+  {
+    src: "/galeria/IMG_7172.JPG",
+    alt: "Recuerdo escolar en Aneley",
+    span: "col-span-1 row-span-2", // 9:16 vertical
+  },
+];
+---
+
+<div class="mt-16 pt-12 border-t border-aneley-sand/50">
+  <!-- Gallery Sub-header -->
+  <div class="text-center max-w-2xl mx-auto mb-10">
+    <span
+      class="inline-block px-4 py-1 rounded-full bg-aneley-purple-soft text-aneley-purple font-heading font-bold text-xs sm:text-sm uppercase tracking-wider mb-3"
+    >
+      Galería de Momentos
+    </span>
+    <h3
+      class="font-heading font-extrabold text-2xl sm:text-3xl text-aneley-purple leading-tight"
+    >
+      Postales de nuestra comunidad
+    </h3>
+  </div>
+
+  <!-- Initial 2 Rows (Always Visible) -->
+  <div
+    class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 auto-rows-[150px] sm:auto-rows-[185px] lg:auto-rows-[210px] grid-flow-dense"
+  >
+    {
+      initialPhotos.map((photo) => (
+        <button
+          type="button"
+          data-lightbox-src={photo.src}
+          data-lightbox-alt={photo.alt}
+          class={`gallery-photo-btn ${photo.span} group relative rounded-2xl sm:rounded-3xl overflow-hidden bg-aneley-ivory shadow-sm hover:shadow-card border-2 border-white/90 focus:outline-none focus:ring-2 focus:ring-aneley-purple/50 transition-all duration-300 cursor-zoom-in`}
+        >
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-aneley-purple-deep/0 group-hover:bg-aneley-purple-deep/15 transition-colors duration-300" />
+        </button>
+      ))
+    }
+  </div>
+
+  <!-- Expandable Container (Slides down smoothly when opened) -->
+  <div
+    id="extra-gallery-wrapper"
+    class="extra-gallery-wrapper overflow-hidden"
+    aria-hidden="true"
+  >
+    <div
+      class="pt-3 sm:pt-4 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 auto-rows-[150px] sm:auto-rows-[185px] lg:auto-rows-[210px] grid-flow-dense"
+    >
+      {
+        extraPhotos.map((photo) => (
+          <button
+            type="button"
+            data-lightbox-src={photo.src}
+            data-lightbox-alt={photo.alt}
+            class={`gallery-photo-btn ${photo.span} group relative rounded-2xl sm:rounded-3xl overflow-hidden bg-aneley-ivory shadow-sm hover:shadow-card border-2 border-white/90 focus:outline-none focus:ring-2 focus:ring-aneley-purple/50 transition-all duration-300 cursor-zoom-in`}
+          >
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-aneley-purple-deep/0 group-hover:bg-aneley-purple-deep/15 transition-colors duration-300" />
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Full-Width Divider Line + Expand/Collapse Button (Moves down smoothly with the gallery) -->
+  <div class="relative flex items-center justify-center mt-8">
+    <div
+      class="w-full h-px bg-gradient-to-r from-aneley-sand/30 via-aneley-purple/35 to-aneley-sand/30"
+      aria-hidden="true"
+    >
+    </div>
+
+    <button
+      type="button"
+      id="toggle-gallery-btn"
+      aria-expanded="false"
+      aria-controls="extra-gallery-wrapper"
+      class="absolute inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white hover:bg-aneley-purple text-aneley-purple hover:text-white font-heading font-bold text-sm sm:text-smm shadow-card border border-aneley-purple/20 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+    >
+      <span id="toggle-gallery-label">Expandir galería</span>
+      <svg
+        id="toggle-gallery-icon"
+        class="w-4 h-4 transition-transform duration-500"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Simple Lightbox Modal for full-size viewing -->
+<div
+  id="gallery-lightbox"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-8"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Vista ampliada de fotografía"
+>
+  <button
+    type="button"
+    id="lightbox-close"
+    aria-label="Cerrar vista ampliada"
+    class="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+  <img
+    id="lightbox-img"
+    src=""
+    alt=""
+    class="max-h-[88vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl"
+  />
+</div>
+
+<style>
+  .extra-gallery-wrapper {
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 450ms ease;
+  }
+  .extra-gallery-wrapper.is-open {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const wrapper = document.getElementById("extra-gallery-wrapper");
+  const toggleBtn = document.getElementById("toggle-gallery-btn");
+  const toggleLabel = document.getElementById("toggle-gallery-label");
+  const toggleIcon = document.getElementById("toggle-gallery-icon");
+
+  let isExpanded = false;
+
+  toggleBtn?.addEventListener("click", () => {
+    if (!wrapper) return;
+    isExpanded = !isExpanded;
+
+    toggleBtn.setAttribute("aria-expanded", String(isExpanded));
+    wrapper.setAttribute("aria-hidden", String(!isExpanded));
+
+    if (isExpanded) {
+      wrapper.classList.add("is-open");
+      wrapper.style.maxHeight = `${wrapper.scrollHeight}px`;
+      if (toggleLabel) toggleLabel.textContent = "Mostrar menos";
+      toggleIcon?.classList.add("rotate-180");
+
+      // After transition ends, allow natural height in case of window resize
+      const onEnd = () => {
+        if (isExpanded) wrapper.style.maxHeight = "none";
+        wrapper.removeEventListener("transitionend", onEnd);
+      };
+      wrapper.addEventListener("transitionend", onEnd);
+    } else {
+      // Lock current pixel height before collapsing to 0 for smooth slide-up
+      wrapper.style.maxHeight = `${wrapper.scrollHeight}px`;
+      void wrapper.offsetHeight; // force reflow
+      wrapper.classList.remove("is-open");
+      wrapper.style.maxHeight = "0px";
+      if (toggleLabel) toggleLabel.textContent = "Expandir galería";
+      toggleIcon?.classList.remove("rotate-180");
+    }
+  });
+
+  // Lightbox logic
+  const lightbox = document.getElementById("gallery-lightbox");
+  const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
+  const lightboxClose = document.getElementById("lightbox-close");
+  const photoBtns = document.querySelectorAll<HTMLButtonElement>(".gallery-photo-btn");
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    document.body.style.overflow = "";
+  }
+
+  photoBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = btn.dataset.lightboxSrc || "";
+      lightboxImg.alt = btn.dataset.lightboxAlt || "";
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox && !lightbox.classList.contains("hidden")) {
+      closeLightbox();
+    }
+  });
+</script>
